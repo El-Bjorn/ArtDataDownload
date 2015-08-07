@@ -7,6 +7,10 @@
 //
 
 #import "NetworkImporter.h"
+#import "Artwork.h"
+#import "DataStorage.h"
+
+extern DataStorage *ds;
 
 @implementation NetworkImporter
 
@@ -30,24 +34,22 @@
                                                 completionHandler:^(NSData *data,
                                                                     NSURLResponse *response,
                                                                     NSError *error){
-                    //NSHTTPURLResponse *httpResp = (NSHTTPURLResponse*)response;
-                    /*NSArray *cookies = [NSHTTPCookie cookiesWithResponseHeaderFields:[httpResp allHeaderFields] forURL:[response URL]];
-                    for (NSHTTPCookie *cookie in cookies) {
-                        NSLog(@"cookies = %@",cookie);
-                    }
-                    NSLog(@"complete resp= %@, err= %@",response,error); */
-                    self.authenticated = YES;
-                    /*[self downloadInfoForPGid:53852
-                          withCompBlock:^(NSDictionary *dict, NSError *err)
-                                        { NSLog(@"art info= %@",dict); }]; */
-                    [self pgidsForIndex:0 withCompBlock:^(NSArray *pgids, NSError *err) {
-                        NSLog(@"pgids = %@",pgids);
+                    // we're authenticated
+                    [self artArrayForIndex:0 withCompBlock:^(NSArray *artDicts, NSError *err) {
+                        NSLog(@"got artwork array: %@",artDicts);
+                        for (NSDictionary *d in artDicts) {
+                            Artwork *a = [self createArtworkFromArtDict:d];
+                            NSLog(@"created artwork: %@",a);
+                        }
+                        //NSLog(@"artDicts = %@",artDicts);
                     }];
     }];
     [task resume];
 }
 
--(void) pgidsForIndex:(int)index withCompBlock:(void (^)(NSArray *pgids, NSError *err))compBlk {
+
+// retrieves array of 10 art piece dictionaries
+-(void) artArrayForIndex:(int)index withCompBlock:(void (^)(NSArray *artDict, NSError *err))compBlk {
     NSURL *url = [NSURL URLWithString:@"http://palette-dev.pacegallery.com/palette/search/filter/ajax/get"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     NSString *postString = [NSString stringWithFormat:@"index=%d&sortType=SORT_TYPE_RELEVANCY_DESC",index];
@@ -63,17 +65,28 @@
                     NSArray *results = ajaxResults[@"data"][@"results"];
                     //NSLog(@"results= %@",results);
                     for (NSDictionary *d in results) {
-                        //NSLog(@"pgid= %@",d[@"artworkPgNumber"]);
-                        [pgidList addObject:d[@"artworkPgNumber"]];
+                        [pgidList addObject:d];
                     }
                     compBlk(pgidList,error);
-
-                                                    
-                                                    
     }];
     [task resume];
+}
+
+-(Artwork*) createArtworkFromArtDict:(NSDictionary*)dict {
+    NSLog(@"creating artwork....");
+    Artwork *newArt = [NSEntityDescription insertNewObjectForEntityForName:@"Artwork" inManagedObjectContext:ds.context];
+    newArt.paceID = dict[@"artworkPgNumber"];
+    newArt.artistNames = dict[@"artistName"];
+    newArt.title = dict[@"artworkTitle"];
+    newArt.creationDate =  [NSString stringWithFormat:@"%@-%@",dict[@"artworkYearFrom"],dict[@"artworkYearTo"]];//dict[@"artworkYearTo"];
+    newArt.statusLabel = dict[@"acquisitionStatusLabel"];
     
-    
+    NSError *savErr = nil;
+    [ds.context save:&savErr];
+    if (savErr) {
+        NSLog(@"Error saving artwork to context: %@",savErr);
+    }
+    return newArt;
 }
 
 -(void) downloadInfoForPGid:(int)pgid

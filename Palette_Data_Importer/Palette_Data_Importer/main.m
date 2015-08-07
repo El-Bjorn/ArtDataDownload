@@ -10,12 +10,14 @@
 #import "DataStorage.h"
 #import "NetworkImporter.h"
 
+DataStorage *ds = nil;
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        DataStorage *ds = [[DataStorage alloc] init];
+        ds = [[DataStorage alloc] init];
         NetworkImporter *ni = [[NetworkImporter alloc] init];
         [ni authenticate];
-        sleep(20);
+        sleep(30);
         
     }
     return 0;

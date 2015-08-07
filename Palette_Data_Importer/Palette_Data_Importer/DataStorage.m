@@ -29,10 +29,14 @@
         storeURL = [storeURL URLByAppendingPathComponent:@"paletteSeedDB.sqlite"];
         NSLog(@"storeURL = %@", storeURL);
         NSError *err = nil;
+        // turn off WAL mode
+        NSDictionary *opts = @{NSSQLitePragmasOption:@{@"journal_mode":@"DELETE"}};
+
         self.persistentStore = [self.coordinator addPersistentStoreWithType:NSSQLiteStoreType
                                                               configuration:nil
                                                                         URL:storeURL
-                                                                    options:nil error:&err];
+                                                                    options:opts // turn off wal
+                                                                      error:&err];
         if (err) {
             NSLog(@"error creating persistent store: %@",err);
             assert(0);

@@ -1,0 +1,38 @@
+setAcquisitionStatusColorLabel: function(data){
+      if (!data)
+        return;
+      for (var i = 0; i < data.length; i++ ){
+            data[i].acquisitionStatusColor = "unknown"; data[i].acquisitionStatusLabel = "Unknown";
+
+          if (data[i].acquisitionStatus == 'GIFTED' || data[i].acquisitionStatus == 'RETURNED' || data[i].acquisitionStatus == 'SOLD') {
+              data[i].acquisitionStatusColor = "red";
+              data[i].acquisitionStatusLabel = data[i].acquisitionStatus;
+            } else if (data[i].acquisitionStatus == 'ACTIVE') {
+                data[i].acquisitionStatusLabel = '';
+                  var flags = {
+                  acquisitionOnConsignmentFlag: ["Consignment", "orange"],
+                  acquisitionOnLoanFlag:        ["Loan",        "orange"],
+                  acquisitionOnApprovalFlag:    ["Approval",    "orange"],
+                  acquisitionReservedFlag:      ["Reserved",    "orange"],
+                  acquisitionAboFlag:           ["ABO",         "orange"],
+                  acquisitionNfsFlag:           ["NFS",         "orange"],
+                  acquisitionRedFlag:           ["Red Flag",    "orange"]
+                }
+                var hasFlag = false;
+                $.each(flags, function(flag, content){
+                  if (data[i][flag] == true) {
+                    hasFlag = true;
+                    data[i].acquisitionStatusLabel += content[0] + " ";
+                    data[i].acquisitionStatusColor = content[1];
+                  }
+                });
+                if (!hasFlag) {
+                    data[i].acquisitionStatusColor = "green";
+                    data[i].acquisitionStatusLabel = "Available";
+                }
+
+            }
+          }
+
+          return data;
+    },
