@@ -1,0 +1,426 @@
+{
+    "data": {
+        "accessInformation": {
+            "canAddMemos": true,
+            "canAddPhotoHistory": true,
+            "canCreateABO": true,
+            "canCreateAcquisition": false,
+            "canCreateApproval": true,
+            "canCreateGift": true,
+            "canCreateMovement": true,
+            "canCreateNFS": true,
+            "canCreateOffer": true,
+            "canCreateOutgoingConsignment": true,
+            "canCreateOutgoingLoan": true,
+            "canCreatePriceChange": true,
+            "canCreateRedFlag": true,
+            "canCreateReserve": true,
+            "canCreateReturn": true,
+            "canCreateSale": true,
+            "canCreateTransfer": true,
+            "canCreateUKImportStatus": true,
+            "canDeleteMemos": true,
+            "canDeletePhotoHistory": true,
+            "canPrintPhotoLabels": true,
+            "canUpdateAcquisitionComment": true,
+            "canUpdateArtwork": true,
+            "canUpdateCrate": true,
+            "canUpdateExistingFrame": true,
+            "canUpdateInscription": true,
+            "canUpdateMemos": true,
+            "canUpdatePhotoHistory": true,
+            "canUpdateProvenance": true,
+            "canUpdatetPGFrame": true
+        },
+        "acquisitionSummary": {
+            "abo": false,
+            "acquiringDealer": "DB",
+            "acquiringDealerId": 39,
+            "acquiringPaceEntity": "The Pace Gallery LLC",
+            "acquiringPaceEntityId": 2,
+            "acquisitionLblVal": null,
+            "acquisitionRegions": [
+                {
+                    "id": 130,
+                    "value": "New York"
+                }
+            ],
+            "agreementNotes": "Previous notes:\r\n\r\nPer DB Office, terms changed to 70/30% Estate of Elizabeth Murray/PW, (DP 01/08/09).",
+            "amoutDueArtist": null,
+            "artistAmount": null,
+            "artistRate": null,
+            "canViewCost": true,
+            "consignmentExpireDate": null,
+            "consignmentShareBasedOnAmount": null,
+            "costPWShare": null,
+            "currency": "USD",
+            "currentPrice": null,
+            "date": 1191902400000,
+            "delivered": true,
+            "dueBasedCurrentPrice": 15400.0,
+            "from": "THE MURRAY-HOLMAN FAMILY TRUST",
+            "id": 33113,
+            "invoiceNumber": null,
+            "loanEndDate": null,
+            "loanExhibitionEndDate": null,
+            "loanExhibitionStartDate": null,
+            "loanNote": null,
+            "loanStartDate": null,
+            "method": "CONSIGNMENT_STANDARD_PERCENTAGE",
+            "netConsignment": null,
+            "nfs": false,
+            "note": "Per DB office, consignor changed from The Estate of Elizabeth Murray to The Murray-Holman Family Trust, terms 70/30% due PG, (DP 5/4/10).",
+            "noteAsia": null,
+            "noteLondon": null,
+            "orderNumber": 1,
+            "partners": [],
+            "percentCon": null,
+            "percentDueArtist": null,
+            "personalPropertyNote": null,
+            "prodCost": null,
+            "productionsCosts": [],
+            "purchaseCost": null,
+            "purchaseDate": null,
+            "purchaseMethod": null,
+            "purchaseMethodAsia": null,
+            "purchaseMethodLondon": null,
+            "purchaseOrder": null,
+            "purchasePgIsPrincipal": true,
+            "purchasePgShareAmount": null,
+            "purchasePgShareCurrency": null,
+            "purchaseReleaseToAccounting": false,
+            "purchaseTerms": null,
+            "purchaseTermsAsia": null,
+            "purchaseTermsLondon": null,
+            "pwShareProfitAmount": null,
+            "pwShareProfitPercent": null,
+            "redFlag": false,
+            "reimbursableAmount": 0.0,
+            "reimbursableCost": 0.0,
+            "reserved": false,
+            "shareRate": 0.7,
+            "soldDate": null,
+            "soldTo": null,
+            "sourceAddressId": 10886,
+            "sourceContactId": 27605,
+            "sourceId": 22700,
+            "status": "ACTIVE",
+            "statusColor": "green",
+            "statusLabel": "Available"
+        },
+        "artworkSummary": {
+            "alternateNumbers": [
+                "DRAW.ND.136"
+            ],
+            "artistNames": "Murray, Elizabeth",
+            "artists": [
+                {
+                    "id": 381,
+                    "label": "Murray, Elizabeth",
+                    "paceArtist": true
+                }
+            ],
+            "artworkTypeDescription": null,
+            "classification": {
+                "id": 21,
+                "value": "WORK ON PAPER"
+            },
+            "confidential": false,
+            "creationDate": "n.d.",
+            "digitalMedia": [
+                {
+                    "id": 680322,
+                    "key": "Ko39vKsX7NomOeif6m-KvELBuq-SSyJf8CkL8TIw0XjWC0mAvRTh7q0xO8T7V2JN5duuCiIBX-A14jsbHkVzAw==",
+                    "type": "image/jpeg",
+                    "url": "JPEGs/PHOTO_ARCHIVES_JPEGs/MURRAY/45953_MURRAY.jpg"
+                }
+            ],
+            "dimensionLines": [
+                {
+                    "dimensions": [
+                        {
+                            "id": 63062,
+                            "otherUnit": null,
+                            "unit": "IN",
+                            "value": "18"
+                        },
+                        {
+                            "id": 63063,
+                            "otherUnit": null,
+                            "unit": "IN",
+                            "value": "17-3/4"
+                        }
+                    ],
+                    "id": 31539,
+                    "lineDisplayed": true,
+                    "linePattern": "18\" x 17-3/4\" (45.7 cm x 45.1 cm)",
+                    "type": "SIZE"
+                }
+            ],
+            "dimensions": "18\" x 17-3/4\" (45.7 cm x 45.1 cm)",
+            "disassembled": false,
+            "disassembledComments": null,
+            "fabricatorPublisherName": null,
+            "fabricatorPublisherType": 0,
+            "id": 25942,
+            "inProduction": false,
+            "inProductionComments": null,
+            "lastUpdator": "p2[DPalmer]",
+            "legacyAsiaNumber": null,
+            "legacyLondonNumber": null,
+            "legacyNewYorkNumber": null,
+            "mediumId": 1722,
+            "mediumName": "colored pencil on paper",
+            "notMade": false,
+            "official": true,
+            "pgNumber": "45953",
+            "placeholder": false,
+            "tags": [],
+            "title": "Untitled",
+            "yearFrom": null,
+            "yearTo": null
+        },
+        "attachments": [],
+        "comments": [
+            {
+                "acquisitionId": 33113,
+                "acquisitionOrderNumber": 1,
+                "comment": null,
+                "editable": true
+            }
+        ],
+        "crate": {
+            "attachments": [],
+            "comment": "packing information not provided on ys (jw 10/24/07)",
+            "depth": {
+                "id": null,
+                "otherUnit": null,
+                "unit": "IN",
+                "value": "-1"
+            },
+            "height": {
+                "id": null,
+                "otherUnit": null,
+                "unit": "IN",
+                "value": "-1"
+            },
+            "location": "",
+            "weight": {
+                "id": null,
+                "otherUnit": null,
+                "unit": "OZ",
+                "value": "-1"
+            },
+            "width": {
+                "id": null,
+                "otherUnit": null,
+                "unit": "IN",
+                "value": "-1"
+            }
+        },
+        "following": false,
+        "framingExisting": {
+            "attachments": [],
+            "depth": {
+                "id": null,
+                "otherUnit": null,
+                "unit": "IN",
+                "value": "-1"
+            },
+            "height": {
+                "id": null,
+                "otherUnit": null,
+                "unit": "IN",
+                "value": "21"
+            },
+            "location": "",
+            "width": {
+                "id": null,
+                "otherUnit": null,
+                "unit": "IN",
+                "value": "21"
+            }
+        },
+        "framingPG": {},
+        "inTransit": false,
+        "inscription": {
+            "attachments": [],
+            "dateLocation": "",
+            "dated": false,
+            "otherInscription": "per EM studio: this is signed and titled - location not provided (jw 10/24/07)",
+            "otherInscriptionLocation": "",
+            "signatureLocation": "",
+            "signed": true
+        },
+        "insuranceCurrency": "USD",
+        "insuranceValue": 16940.0,
+        "isInRegion": true,
+        "location": {
+            "addressId": 17446,
+            "addressText": "625 West 55th Street - New York, NY, 10019, United States",
+            "city": "New York",
+            "country": "United States",
+            "entityId": 17094,
+            "entityName": "PACE 55TH ST",
+            "state": "NY",
+            "street": "625 West 55th Street",
+            "subLocationName": null,
+            "zipPostalCode": "10019"
+        },
+        "locationDate": 1232600400000,
+        "memos": [
+            {
+                "attachments": [],
+                "comment": "per ys, there are no labels (jw 10/24/07)",
+                "type": "LABELS"
+            },
+            {
+                "attachments": [],
+                "comment": "per ys, condition is good (jw 10/24/07)",
+                "type": "COND_CONSERVATION"
+            }
+        ],
+        "movementHistory": [
+            {
+                "acquisitionId": 33113,
+                "acquisitionOrderNumber": 1,
+                "actualArrivalDate": 1232600400000,
+                "actualShipDate": 1232600400000,
+                "destination": "PACE 55TH ST",
+                "id": 140500,
+                "origin": "PW ARTEX",
+                "pending": false,
+                "shipOrderId": 15385,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 33113,
+                "acquisitionOrderNumber": 1,
+                "actualArrivalDate": 1204261200000,
+                "actualShipDate": 1204261200000,
+                "destination": "PW ARTEX",
+                "id": 140501,
+                "origin": "PW CIRKER",
+                "pending": false,
+                "shipOrderId": 71338,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 33113,
+                "acquisitionOrderNumber": 1,
+                "actualArrivalDate": 1192075200000,
+                "actualShipDate": null,
+                "destination": "PW CIRKER",
+                "id": 140502,
+                "origin": "MURRAY ELIZABETH",
+                "pending": false,
+                "shipOrderId": 66689,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 33113,
+                "acquisitionOrderNumber": 1,
+                "actualArrivalDate": 1191902400000,
+                "actualShipDate": 1191902400000,
+                "destination": "MURRAY ELIZABETH",
+                "id": 140503,
+                "origin": null,
+                "pending": false,
+                "shipOrderId": null,
+                "type": "ORIGIN"
+            }
+        ],
+        "pgNumberNext": "45954",
+        "pgNumberPrevious": "45952",
+        "photos": [
+            {
+                "comment": "",
+                "date": 1192507200000,
+                "exhibition": null,
+                "format": "digital",
+                "id": 33058,
+                "photographer": {
+                    "id": 25369,
+                    "name": "Ellen Labenski",
+                    "type": null
+                },
+                "photographerAddress": {
+                    "active": false,
+                    "city": null,
+                    "country": null,
+                    "id": null,
+                    "state": null,
+                    "street": null,
+                    "text": null,
+                    "zipPostalCode": null
+                },
+                "photographerContact": {
+                    "active": false,
+                    "comment": null,
+                    "company": null,
+                    "division": null,
+                    "emailAddresses": null,
+                    "firstName": null,
+                    "fullName": null,
+                    "id": null,
+                    "jobDescription": null,
+                    "lastName": null,
+                    "middleName": null,
+                    "title": null
+                },
+                "scanned": "",
+                "source": "",
+                "storedLocation": "",
+                "viewNumber": ""
+            }
+        ],
+        "price": {
+            "currency": "USD",
+            "effectiveDate": 1303162222420,
+            "paceContact": "DB",
+            "price": 22000.0
+        },
+        "priceHistory": [
+            {
+                "acquisitionId": 33113,
+                "acquisitionOrderNumber": 1,
+                "comment": "",
+                "currency": "USD",
+                "effectiveDate": "1303162222420",
+                "id": "43571",
+                "paceContact": "DB",
+                "paceContactId": "39",
+                "price": "22000.00"
+            },
+            {
+                "acquisitionId": 33113,
+                "acquisitionOrderNumber": 1,
+                "comment": "",
+                "currency": "USD",
+                "effectiveDate": "1242411846667",
+                "id": "43570",
+                "paceContact": "DB",
+                "paceContactId": "39",
+                "price": "18000.00"
+            },
+            {
+                "acquisitionId": 33113,
+                "acquisitionOrderNumber": 1,
+                "comment": "",
+                "currency": "USD",
+                "effectiveDate": "1241709822797",
+                "id": "43569",
+                "paceContact": "DB",
+                "paceContactId": "39",
+                "price": "22000.00"
+            }
+        ],
+        "provenanceComment": null,
+        "tags": [],
+        "ukImportStatus": null,
+        "ukImportStatusEndDate": null,
+        "ukImportStatusHistory": [],
+        "ukImportStatusStartDate": null
+    },
+    "version": "1618"
+}

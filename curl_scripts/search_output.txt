@@ -1,0 +1,853 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Palette 3</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <link rel="shortcut icon" href="/palette/resources/img/favicon.ico" />
+    <link rel="apple-touch-icon" href="/palette/resources/img/logo-white.png" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+/*
+
+    All javascript translations are defined here.
+
+*/
+
+var
+    dateFormats = [],
+    dateLabels = [],
+    timeFormats = [],
+    timeLabels = [];
+
+    dateFormats.push("yyyy-MM-dd");dateFormats.push("MM/dd/yyyy");dateFormats.push("dd-MM-yyyy");
+    dateLabels.push("YYYY-MM-DD");dateLabels.push("MM/DD/YYYY");dateLabels.push("DD-MM-YYYY");
+    timeFormats.push("h:mm:ss a");timeFormats.push("HH:mm:ss");timeFormats.push("H:mm:ss");
+    timeLabels.push("H:MM:SS (am/pm)");timeLabels.push("HH:MM:SS (24 hr)");timeLabels.push("H:MM:SS (24 hr)");
+
+
+window.T = {
+    "default":{
+        sortType: "SORT_TYPE_RELEVANCY_DESC" || "Relevancy",
+        userFullName: "CHarnden"
+    },
+    formats: {
+        date: "MM/dd/yyyy".toUpperCase(),
+        dateFormats: dateFormats,
+        dateLabels: dateLabels,
+        number: "#,##0",
+        time: "h:mm:ss a",
+        timeFormats: timeFormats,
+        timeLabels: timeLabels
+    },
+	privileges: {
+        accession:                  false || true,
+        accession_cross_region:     false || true,
+        artist_management:          false || true,
+        cost_access:                false || true,
+		narrative:                  false || true,
+        narrative_cross_region: 	false || true,
+        narrative_read: 			false || true,
+        narrative_edit: 			false || true,
+        narrative_edit_extended: 	false || true,
+        abo_edit:                   false || true,
+        abo_edit_extended:          false || true,
+        approval_edit:              false || true,
+        approval_edit_extended:     false || true,
+        consign_edit:               false || true,
+        consign_edit_extended:      false || true,
+        gift_edit:                  false || true,
+        gift_edit_extended:         false || true,
+        insurance_reports:          false || true,
+        loan_edit:                  false || true,
+        loan_edit_extended:         false || true,
+        nfs_edit:                   false || true,
+        nfs_edit_extended:          false || true,
+        red_flag_edit:              false || true,
+        red_flag_edit_extended:     false || true,
+		reserve_cross_region: 	    false || true,
+		reserve_edit: 			    false || true,
+		reserve_edit_extended: 	    false || true,
+		reserve_extend:             false || true,
+		reserve_renewal: 		    false || true,
+        return_edit:                false || true,
+        return_edit_extended:       false || true,
+        transfer_edit:              false || true,
+        transfer_edit_extended:     false || true,
+        post_release_edit:          false || true,
+        priceChangeHistory:         false || true,
+        reception:                  false || true,
+        sale_edit:                  false || true,
+        shipment:                   false || true,
+        sale_edit_extended:         false || true,
+        sale_edit_invoice_number:   false || true,
+        set_insurance_value:        false || true,
+        update_price_change:        false || true,
+        search_advanced:            false || true,
+        search_exhibition:          false || true,
+        global_list_management:     false || true,
+        palette_administration:     false || true,
+        uk_import_status_edit:      false || true,
+        view_confidential:          false || true,
+        view_current_acquisition:   false 
+	},
+    acquisitions: {
+        acquiringDealer:        "Acquiring Dealer",
+		acquisition: 			"Acquisition",
+        amountDueArtist:        "Amount due artist",
+		costNotes:  	        "Cost Notes",
+        costOfPWShare:          "Cost of PG share",
+		current: 				"Current",
+		date: 					"Date",
+        dueBasedOnCurrentPrice: "Due based on current price",
+        from:                   "From",
+		invoiceNumber: 			"Invoice #",
+        netConsignment:         "Net consignment",
+		noMethod: 				"No acquisition information entered at this time",
+        partner:                "Partner",
+        percentage:             "Percentage",
+        percentConsignment:     "Percent cons",
+        percentDueArtist:       "Percent due artist",
+        productionCost:         "Prod cost",
+        purchaseCost:           "Purchase Cost",
+        pwShareOfProfit:        "PG share of profit",
+        reimburseableCost:      "Reimbursable cost",
+		soldDate: 				"Date of Sale",
+        soldTo:                 "Sold to",
+        splitCommission:        "Split Commission",
+        totalCost:              "Total cost",
+        totalPurchaseCost:      "Total Purchase Cost",
+
+        method: {
+            NOT_SET: "Not Set",
+            CONSIGNMENT_NET_CONSIGNOR: "Consignment - Net to Consignor",
+            CONSIGNMENT_PRODUCTION_COSTS: "Consignment - with Production Costs",
+            CONSIGNMENT_REIMBURSABLE: "Consignment - with Reimbursable",
+            CONSIGNMENT_SPLIT_COMMISSION: "Consignment - Split Commission",
+            CONSIGNMENT_SPLIT_COMMISSION_PRODUCTION_COST: "Consignment - Split Commission with Production Costs",
+            CONSIGNMENT_STANDARD_PERCENTAGE: "Consignment - Standard Percentage",
+            LOAN: "Loan",
+            PERSONAL_PROPERTY: "Personal Property",
+            PURCHASE: "Purchase",
+            PURCHASE_PRODUCTION_COST: "Purchase - with Production Costs",
+            PURCHASE_SHARE: "Purchase - Share",
+            PURCHASE_TRADE: "Purchase - Trade"
+        }
+    },
+	cardTab: {
+		change: "Change",
+		comments: "Comments",
+		history: "History",
+		memos: "Memos",
+		movementHistory: "Location History",
+		narrative: "Narrative",
+		photos: "Photo History",
+		price: "Price",
+		priceChange: "Price Change",
+		priceChangeHistory: "Price Change History",
+		registrar: "Registrar / Installation Memos",
+		tags: "Tags",
+		ukImportStatusHistory: "UK Import Status",
+        toBeDelivered: "- To be delivered"
+	},
+	criteria: {
+	    "acquisitionIds": "Selected acquisitions",
+	    "negativeAcquisitionIds": "Removed acquisitions",
+	    "acquisitions.acquisitionMethodId": "Acquisition method(s)",
+	    "acquisitions.acquisitionDateRange": "Acquisition date range",
+	    "acquisitions.acquisitionCostCurrency": "Acquisition cost currency",
+	    "acquisitions.acquisitionCostMax": "Max acquisition cost",
+	    "acquisitions.acquisitionCostMin": "Min acquisition cost",
+	    "acquisitions.acquisitionGalleryId": "Acquiring gallery",
+	    "acquisitions.acquisitionPaceContactId": "Acquiring dealer",
+	    "acquisitions.acquisitionSenderEntityId": "Acquisition from",
+		"artists": "Artists",
+		"artistsPace": "PACE artists",
+		"artistsAll": "All artists",
+		artworkPgNumber: "PG Number",
+		"booleanOptions": "Boolean options",
+		"booleanOptions.ABO": "ABO",
+		"booleanOptions.Confidential": "Confidential",
+		"booleanOptions.Disassembled": "Disassembled",
+		"booleanOptions.exhibition": "Exhibition",
+		"booleanOptions.InProduction": "In Production",
+		"booleanOptions.NFS": "NFS",
+		"booleanOptions.NotMade": "Not Made",
+		"booleanOptions.onApproval": "On Approval",
+		"booleanOptions.onConsignment": "On Consignment",
+		"booleanOptions.onLoan": "On Loan",
+		"booleanOptions.Official": "Official",
+		"booleanOptions.Placeholder": "Placeholder",
+		"booleanOptions.redFlag": "Red Flag",
+		"booleanOptions.reserved": "Reserved",
+		"classifications": "Classifications",
+		"exhibitions": "Exhibitions",
+        "exhibitionStatus": "Exhibition Item Status",
+		"height": "Height",
+		"height.max": "Max height",
+		"height.metric": "Height metric",
+		"height.min": "Min height",
+		lists: "List",
+		"locations": "Locations",
+		"locations.paceLocationLabel": "PACE location",
+		"locations.selectedItems": "Other locations",
+		"NO": "Exclude",
+        "price": "Price",
+        "price.max": "Max price",
+        "price.min": "Min price",
+        "price.currency": "Price currency",
+		"query": "Query",
+        "refine.refineArtistIds":"Artist",
+        "refine.refineClassificationIds": "Classification",
+        "refine.refineAcquisitionLocationEntityIds": "Location",
+        "refine.refineAcquisitionStatusLabels": "Status",
+        "refine.refineListIds": "List",
+        "refine.refineTagIds": "Tag",
+        "refine.refineExhibitionIds": "Exhibition",
+        "refine.refineAcqMethods": "Acquisition Type",
+        "refine.refineUKImportStatus": "Current UK Import Status",
+        "refine.refineRegionIds": "Region",
+        "regions": "Regions",
+		"sortType": "Sort type",
+		"status": "Status",
+		"transactions.transactionType": "Transaction type",
+		"transactions.transactionDateRange": "Transaction date range",
+		"transactions.transactionStatus": "Transaction status",
+		"transactions.transactionPaceContactId": "Transacting dealer",
+		"transactions.transactionFromId": "Transaction from",
+		"transactions.transactionToEntityId": "Transaction to",
+		"width": "Width",
+		"width.max": "Max width",
+		"width.metric": "Width metric",
+		"width.min": "Min width",
+		"YES": "Only",
+        "ukImportStatuses.ukImportStatusName":"British Import Status",
+        "ukImportStatuses.ukImportStatusDateRange":"British Import Status Date"
+	},
+	exhibitions: {
+        in_exhibition: "In Exh.",
+        exhibition_related: "Exh. Related",
+	    status: {
+	        active: "Active Artwork",
+	        cancelled: "Cancelled",
+	        historical: "Historical",
+	        promised: "Promised",
+	        related: "Related Artwork",
+	        removed: "Removed"
+	    }
+	},
+	filters: {
+	    beginPlaceholder: "Begin your search",
+	    beginPlaceholderMobile: "Search",
+	    quicksearchPlaceholder: "Search",
+	    refinePlaceholder: "Refine",
+	    refinePlaceholderMobile: "Refine"
+	},
+	header: {
+	    logout: "Logout",
+	    profile: "Settings"
+	},
+	help: {
+	    actions: {
+	        follow: "Follow artwork to see any status changes reported to your Homepage feed.",
+	        share: "Use 'Share' to quickly generate a PDF that can be emailed."
+	    },
+	    homepage: {
+	        archive: "When you archive a notification it leaves the Notifications tab and moves to the Archive tab.",
+	        exhibitions: "On the right is the Exhibitions Column, which can be filtered to show Current, Upcoming, or All Exhibitions.",
+	        lists: "Manage lists from the 'My Lists' tab",
+	        newTab: "Click here to start a new tab.",
+	        notifications: "The 'Notifications' section displays chronological updates about transactions, artwork you are following, and other items you specify in Settings.",
+	        repeatTurtorial: 'Click here to view the tutorials again, and to reveal help for each tab',
+	        settings: "Go to 'Settings' to choose what notifications you'd like to see displayed on your Homepage."
+	    },
+	    inventoryCard: {
+	      acquisitionExpand:    "Click the 'Expand' icon to display the details for Acquisitions or Transactions.",
+	      back:                 "Click to return to the search screen to refine your current search.",
+	      dndList:              "Use 'Drag-and-Drop' to start a new list or add to an existing one.",
+	      follow:               "Follow artwork to see any status changes reported to your Homepage feed.",
+	      relatedArt:           "Discover Related Art at the bottom of the Inventory Card.",
+	      reserve:              "Click the 'Reserve' button to add a Reserve to an artwork.",
+	      reserveSidebar:       "Click a Reserve link to edit or renew a Reserve."
+	    },
+	    lists: {
+	      actions: "Use the 'Actions' menu to copy, merge, or delete lists."
+	    },
+	    refine: {
+            refineSearch: "Refine your search results here",
+            refineHide: "This icon shows or hides the 'Refine By' sidebar.",
+	    },
+	    refineBy: {
+    	    expand: "Expand and collapse rows by clicking on arrows.",
+    	    refineSearch: "Refine your search results here"
+	    },
+	    results: {
+	        actions: "...then choose to keep or remove those artworks from your search results, or choose an action to apply to your set of artworks.",
+	        editColumns: "Choose the columns you want to see in your table, and also change the sequence of the columns.",
+	        editFields: "Choose the information you want to see.",
+	        flags: "Flags indicate regions where the artwork can sell.",
+	        selectAllNone: "Use these icons to 'Select All' or 'Deselect All.'",
+	        selectIndividual: "Select artworks by clicking the checkmark next to each one...",
+	        sorting: "Click any column head to sort numerically or alphabetically.",
+	        tabCriteria: "Hover on a tab to preview the search criteria."
+	    },
+	    settings: {
+
+	    }
+	},
+	reserve: {
+		activeDate: 	"Active date",
+		client: 		"Client",
+		comment: 		"Comments",
+		expireDate: 	"Expire date",
+		paceContact: 	"Pace contact",
+		price: 			"Reserve price",
+		renewals: 		"Renewals",
+		terms: 			"Purchase terms"
+	},
+	settings: {
+	    alerts: {},
+	    dateFormat: "Date Format",
+	    defaultCurrency: "Default currency",
+        defaultResultDisplayStyle: "Default list style",
+        defaultResultOrder: "Default order",
+	    newItems: {
+	        all: "All New Items"
+	    },
+	    nfs: {
+	        acquiredByContact: "Acquired by My Pace Contact",
+	        all: "All NFS",
+	        heading: "NFS",
+	        onOwnedInventory: "On Owned Inventory",
+	        pendingExhibitions: "Pending or Active Exhibitions"
+	    },
+	    numberOfItemsDisplayedInLists: "# of items in list",
+	    paceContact: "Pace Contact",
+	    paceEntity: "Pace Entity",
+	    paceLocation: "Pace Location",
+	    priceChanges: {
+	        acquiredByContact: "Acquired by My Pace Contact",
+	        all: "All Price Changes",
+	        heading: "Price Changes",
+	        pendingExhibitions: "Pending or Active Exhibitions",
+	        specificArtists: "Specific Artist(s)",
+	        specificPGNumber: "PG Number"
+	    },
+	    reserves: {
+	        acquiredByContact: "Acquired by My Pace Contact",
+	        all: "All Reserves",
+	        heading: "Reserves",
+	        pendingExhibitions: "Pending or Active Exhibitions",
+	        renewalsAndExpirations: "My Pace Contact's Reserve Changes",
+	        specificArtists: "Specific Artist(s)",
+	        specificPGNumber: "PG Number"
+	    },
+        timeFormat: "Time Format",
+	    title: "Edit User Profile"
+	},
+    sorting: {
+        SORT_TYPE_ACQUISITION_GALLERY_ASC: "Acq. Gallery (A-Z)",
+        SORT_TYPE_ACQUISITION_GALLERY_DESC: "Acq. Gallery (Z-A)",
+        SORT_TYPE_ACQUISITION_ORDER_NUMBER_ASC: "Acq. Order # (Low-High)",
+        SORT_TYPE_ACQUISITION_ORDER_NUMBER_DESC: "Acq. Order # (High-Low)",
+        SORT_TYPE_ACQUISITION_SOURCE_ASC: "Acq. Source (A-Z)",
+        SORT_TYPE_ACQUISITION_SOURCE_DESC: "Acq. Source (Z-A)",
+        SORT_TYPE_ACQUISITION_METHOD_NAME_ASC: "Acq. Type (A-Z)",
+        SORT_TYPE_ACQUISITION_METHOD_NAME_DESC: "Acq. Type (Z-A)",
+        SORT_TYPE_ARTIST_NAME_ASC: "Artist (A-Z)",
+        SORT_TYPE_ARTIST_NAME_DESC: "Artist (Z-A)",
+        SORT_TYPE_ARTWORK_CLASSIFICATION_ASC: "Classification (A-Z)",
+        SORT_TYPE_ARTWORK_CLASSIFICATION_DESC: "Classification (Z-A)",
+        SORT_TYPE_ARTWORK_DIMENSIONS_ASC: "Dimensions (A-Z)",
+        SORT_TYPE_ARTWORK_DIMENSIONS_DESC: "Dimensions (Z-A)",
+        SORT_TYPE_ARTWORK_EDITION_ASC: "Edition (A-Z)",
+        SORT_TYPE_ARTWORK_EDITION_DESC: "Edition (Z-A)",
+        SORT_TYPE_EXHIBITION_ASC: "Exh. Order # (Low-High)",
+        SORT_TYPE_EXHIBITION_DESC: "Exh. Order # (High-Low)",
+        SORT_TYPE_ACQUISITION_LOCATION_ASC: "Location (A-Z)",
+        SORT_TYPE_ACQUISITION_LOCATION_DESC: "Location (Z-A)",
+        SORT_TYPE_ARTWORK_MEDIUM_ASC: "Medium (A-Z)",
+        SORT_TYPE_ARTWORK_MEDIUM_DESC: "Medium (Z-A)",
+        SORT_TYPE_PACE_NUMBER_ASC: "Pace # (Low-High)",
+        SORT_TYPE_PACE_NUMBER_DESC: "Pace # (High-Low)",
+        SORT_TYPE_ACQUISITION_PRICE_ASC: "Price (Low-High)",
+        SORT_TYPE_ACQUISITION_PRICE_DESC: "Price (High-Low)",
+        SORT_TYPE_ACQUISITION_PRICE_DEALER_ASC: "Price Dealer (Low-High)",
+        SORT_TYPE_ACQUISITION_PRICE_DEALER_DESC: "Price Dealer (High-Low)",
+        SORT_TYPE_ACQUISITION_PRICE_EFFECTIVE_DATE_ASC: "Price Effective Date (A-Z)",
+        SORT_TYPE_ACQUISITION_PRICE_EFFECTIVE_DATE_DESC: "Price Effective Date (Z-A)",
+        SORT_TYPE_RELEVANCY_DESC: "Relevancy",
+        SORT_TYPE_ACQUISITION_STATUS_LABEL_ASC: "Status (Available first)",
+        SORT_TYPE_ACQUISITION_STATUS_LABEL_DESC: "Status (Available last)",
+        SORT_TYPE_ARTWORK_TITLE_ASC: "Title (A-Z)",
+        SORT_TYPE_ARTWORK_TITLE_DESC: "Title (Z-A)",
+        SORT_TYPE_ACQUISITION_TRANSACTION_ASC: "Transaction (A-Z)",
+        SORT_TYPE_ACQUISITION_TRANSACTION_DESC: "Transaction (Z-A)",
+        SORT_TYPE_ARTWORK_YEAR_ASC: "Year (Low-High)",
+        SORT_TYPE_ARTWORK_YEAR_DESC: "Year (High-Low)"
+    },
+    transactions: {
+        acquisitionNumber:  "Acq. #",
+		clientName: 		"Client",
+		comment: 			"Comments",
+		date: 				"Date",
+		exhibitionLocation: "Exhib. Location",
+		exhibitionName: 	"Exhib. Name",
+		exhibitionStatus: 	"Ehib. Status",
+		expirationDate: 	"Expiration Date",
+		insurancePrice: 	"Insurance Value",
+		newInsurancePrice: 	"New Calculated Insurance Value",
+		paceContact:   		"PG Contact",
+		price: 				"Price",
+		reason: 			"Reason",
+		renewals: 			"Renewals",
+		reserveStatus: 		"Reserve Status",
+		status: 	   		"Status",
+		terms:  			"Terms",
+        transactions:  		"Transactions",
+		transfer: 	   		"Transfer",
+        type: 		   		"Type",
+        types: {
+            APPROVAL: "APPROVAL",
+            ABO: "ABO",
+            ASK_BEFORE_OFFERING: "ABO",
+            GIFT_DONATION: "GIFT",
+            EXHIBITION: "EXHIBITION",
+            NFS: "NFS",
+            OFFER: "OFFER",
+            OUTGOING_CONSIGNMENT: "OUTGOING CONSIGNMENT",
+            OUTGOING_LOAN: "OUTGOING LOAN",
+            RED_FLAG: "RED FLAG",
+            RESERVE: "RESERVE",
+            RETURN: "RETURN",
+            SALE: "SALE",
+            TRANSFER: "TRANSFER"
+        }
+    },
+    movement: {
+        type: "Type",
+        transaction: "Transaction",
+        from: "From",
+        shipDate: "Ship Date",
+        to: "To",
+        recDate: "Rec Date"
+    },
+    ukImportStatus: {
+        value: "Status",
+        startDate: "Start Date",
+        endDate: "End Date",
+        comment: "Comment",
+        view: "View",
+        heading: "UK Import Status"
+    },
+
+    photoHistory: {
+        date: "Date",
+        exhibition: "Exhibition",
+        photographer: "Photographer",
+        source: "Source",
+        view: "View",
+        stored: "Stored",
+        format: "Format",
+        scanned: "Scanned",
+        comments: "Comments",
+        notFound: "No photos for this artwork"
+    },
+    priceChange: {
+        effectiveDate: "Date",
+        price: "Price",
+        paceContact: "Pace Contact"
+    },
+    memos: {
+        types: {
+            MISC_HIST_INFORMATION: "Misc. Hist. Info",
+            COND_CONSERVATION: "Condition / Conservation",
+            LABELS: "Labels",
+            INSTALLATION_HANDLING: "Installation / Handling",
+            PRODUCTION: "Production"
+        },
+        signaturelocation: "Signature Location",
+        datelocation: "Date Location",
+        otherinscription: "Other Inscription",
+        otherinscriptionlocation: "Additional Inscription"
+    },
+    exportDialog: {
+        exportType: {
+            UNSELECTED: "Select File Type",
+            PDF: "PDF",
+            WORD: "Word",
+            EXCEL: "Excel",
+            COPY_PASTE: "Copy to Clipboard"
+        }
+    },
+    changeHistory: {
+        fields: {
+            active_date: "Activation Date",
+            cancelled_date: "Canceled Date",
+            client: "Client",
+            comment: "Comment",
+            cover_insurance_resp: "Cover Insurance",
+            cover_insurance_comment: "Cover Insuirance Comment",
+            currency: "Currency",
+            dealer_consultant: "Dealer Consultant",
+            effective_date: "Effective Date",
+            method: "Acquisition Type", // NOTE: Acquisition Method is now Acquisition Type -- but this change might alter another method field?
+            organize_shipping_comment: "Organize Shipping Comment",
+            organize_shipping_resp: "Shipping Responsibility",
+            pace_entity: "Pace Entity",
+            pace_contact: "Pace Contact",
+            pay_shipping_comment: "Pay Shipping Comment",
+            pay_shipping_resp: "Pay Shipping",
+            price: "Price",
+            promised_date: "Promised Date",
+            reason: "Reason",
+            returned_date: "Returned Date",
+            ship_to_address: "Ship To Address",
+            ship_to_entity: "Ship To Entity",
+            sold_date: "Sold Date",
+            status: "Status",
+            type: "Type",
+            value: "Value",
+            value_set_manually: "Value Overwritten Manually"
+        }
+    }
+};
+
+
+
+var H = {
+    actions: {
+        follow: { 'data-step': 1, 'data-intro-scope': 'actions', 'data-intro': T.help.actions.follow },
+        share: { 'data-step': 2, 'data-intro-scope': 'actions', 'data-intro': T.help.actions.share }
+    },
+    homepage: {
+        notifications:  { 'data-step': 1, 'data-intro-scope': 'homepage', 'data-intro': T.help.homepage.notifications, 'data-position': 'right' },
+        archive:        { 'data-step': 2, 'data-intro-scope': 'homepage', 'data-intro': T.help.homepage.archive },
+        exhibitions:    { 'data-step': 3, 'data-intro-scope': 'homepage', 'data-intro': T.help.homepage.exhibitions, 'data-position':'left' },
+        newTab:         { 'data-step': 4, 'data-intro-scope': 'homepage', 'data-intro': T.help.homepage.newTab },
+        settings:       { 'data-step': 5, 'data-intro-scope': 'homepage', 'data-intro': T.help.homepage.settings },
+        listsTab:       { 'data-step': 6, 'data-intro-scope': 'homepage', 'data-intro': T.help.homepage.lists },
+        repeat:         { 'data-step': 7, 'data-intro-scope': 'homepage', 'data-intro': T.help.homepage.repeatTutorial }
+    },
+    inventoryCard: {
+      back:                 { 'data-step': 1, 'data-intro-scope': 'inventory', 'data-intro': T.help.inventoryCard.back },
+      follow:               { 'data-step': 2, 'data-intro-scope': 'inventory', 'data-intro': T.help.inventoryCard.follow },
+      reserve:              { 'data-step': 3, 'data-intro-scope': 'inventory', 'data-intro': T.help.inventoryCard.reserve },
+      reserveSidebar:       { 'data-step': 4, 'data-intro-scope': 'inventory', 'data-intro': T.help.inventoryCard.reserveSidebar },
+      acquisitionExpand:    { 'data-step': 5, 'data-intro-scope': 'inventory', 'data-intro': T.help.inventoryCard.acquisitionExpand },
+      dndList:              { 'data-step': 6, 'data-intro-scope': 'inventory', 'data-intro': T.help.inventoryCard.dndList },
+      relatedArt:           { 'data-step': 7, 'data-intro-scope': 'inventory', 'data-intro': T.help.inventoryCard.relatedArt }
+    },
+    lists: {
+        actions: { 'data-step': 1, 'data-intro-scope': 'lists', 'data-intro': T.help.lists.actions },
+    },
+    refine: {},
+    results: {
+        refine:         { 'data-step': 1, 'data-intro-scope': 'results', 'data-intro': T.help.refineBy.refineSearch, 'data-position': 'right' },
+        expand:         { 'data-step': 2, 'data-intro-scope': 'results', 'data-intro': T.help.refineBy.expand },
+        hideRefineBar:  { 'data-step': 3, 'data-intro-scope': 'results', 'data-intro': T.help.refine.refineHide },
+        refineSearch:   { 'data-step': 4, 'data-intro-scope': 'results', 'data-intro': T.help.refine.refineSearch },
+        select:         { 'data-step': 5, 'data-intro-scope': 'results', 'data-intro': T.help.results.selectIndividual },
+        action:         { 'data-step': 6, 'data-intro-scope': 'results', 'data-intro': T.help.results.actions },
+        editColumns:    { 'data-step': 7, 'data-intro-scope': 'results', 'data-intro': T.help.results.editColumns, 'data-position': 'left'  },
+        editFields:     { 'data-step': 7, 'data-intro-scope': 'results', 'data-intro': T.help.results.editFields, 'data-position': 'left' },
+        selectAllNone:  { 'data-step': 8, 'data-intro-scope': 'results', 'data-intro': T.help.results.selectAllNone, 'data-position': 'left' }
+
+    }
+};
+    //
+    // results: {
+    //     flags: "Flags indicate regions where the artwork can sell.",
+    //     sorting: "Click any column head to sort numerically or alphabetically.",
+    //     tabCriteria: "Hover on a tab to preview the search criteria."
+    // },
+
+</script>
+
+    <!-- Select desktop or mobile header -->
+    
+        
+
+
+
+
+
+
+
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!-- REACT Modules -->
+
+
+    <!-- REACT Library -->
+    <script src="/palette/resources/js_core/react-with-addons-0.13.0.min.js" type="text/javascript"></script>
+    <script src="/palette/resources/js_core/reflux.js" type="text/javascript"></script>
+
+    
+    <link type="text/css" rel="stylesheet" href="/palette/resources/css/compiled/p.min.css?1618" />
+    <script type="text/javascript" src="/palette/resources/js/p.min.js?1618"></script>
+
+    <script type="text/javascript">
+        $(function(){
+            window.onbeforeunload = Palette.onbeforeunload;
+        })
+    </script>
+
+
+
+    
+
+    <!-- start Mixpanel -->
+    <script type="text/javascript">(function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
+    for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="//cdn.mxpnl.com/libs/mixpanel-2.2.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);</script>
+    <!-- end Mixpanel -->
+
+    <script>
+    
+        mixpanel.init("a397a8a7c4ecbad9711d98a016eabe55"); // DEV / STAGING
+    
+        mixpanel.identify("CHarnden");
+        mixpanel.people.set({
+            "$email": "",
+            "$name": "CHarnden",
+            "Pace Contact": "CH",
+            "Default Currency": "USD",
+            "Default Ordering": "SORT_TYPE_RELEVANCY_DESC",
+            "Default Display": "gallery"
+        });
+
+    
+    
+            window.onerror = function(msg, url, line, column, errorObj) {
+                if (column == undefined) column = 0;
+                if (errorObj == undefined) errorObj = { stack: ""};
+                Palette.error("Javascript Error", msg + "\n<br />URL: " + url + "\n<br />Line: " + line+":"+column+"\n<br />Stacktrace:" + errorObj.stack.replace("\n", "<br />"));
+                return false;
+            };
+    
+    </script>
+
+</head>
+<body>
+    
+
+    
+        <div id="app-mount-point"></div>
+    
+    <script type="text/javascript">
+        $.ajaxSettings.traditional = true;
+        $.ajaxSettings.statusCode = { 200: function(jqXHR){ window.application.handleMessages(200, jqXHR); },
+                                      400: function(jqXHR) { window.application.handleMessages(400, jqXHR); },
+                                      401: Palette.timeout,
+                                      403: function(jqXHR) { window.application.handleMessages(403, jqXHR); },
+                                      500: function(jqXHR){ window.application.handleMessages(500, jqXHR); }  };
+
+        var __MasterData = {"currencies":{"CNY":6.20660,"EUR":0.91010,"GBP":0.64070,"HKD":7.75150,"USD":1},"paceRegions":[{"id":131,"value":"California"},{"id":6,"value":"China"},{"id":9,"value":"Hong Kong"},{"id":130,"value":"New York"},{"id":4,"value":"United Kingdom"}],"resultOrderFields":["SORT_TYPE_RELEVANCY_DESC","SORT_TYPE_PACE_NUMBER_ASC","SORT_TYPE_PACE_NUMBER_DESC","SORT_TYPE_ARTIST_NAME_ASC","SORT_TYPE_ARTIST_NAME_DESC","SORT_TYPE_ARTWORK_TITLE_ASC","SORT_TYPE_ARTWORK_TITLE_DESC","SORT_TYPE_ARTWORK_YEAR_ASC","SORT_TYPE_ARTWORK_YEAR_DESC","SORT_TYPE_ARTWORK_MEDIUM_ASC","SORT_TYPE_ARTWORK_MEDIUM_DESC","SORT_TYPE_ARTWORK_CLASSIFICATION_ASC","SORT_TYPE_ARTWORK_CLASSIFICATION_DESC","SORT_TYPE_ARTWORK_DIMENSIONS_ASC","SORT_TYPE_ARTWORK_DIMENSIONS_DESC","SORT_TYPE_ARTWORK_EDITION_ASC","SORT_TYPE_ARTWORK_EDITION_DESC","SORT_TYPE_ALTERNATE_INVENTORY_NUMBER_ASC","SORT_TYPE_ALTERNATE_INVENTORY_NUMBER_DESC","SORT_TYPE_ACQUISITION_ORDER_NUMBER_ASC","SORT_TYPE_ACQUISITION_ORDER_NUMBER_DESC","SORT_TYPE_ACQUISITION_LOCATION_ASC","SORT_TYPE_ACQUISITION_LOCATION_DESC","SORT_TYPE_ACQUISITION_PRICE_ASC","SORT_TYPE_ACQUISITION_PRICE_DESC","SORT_TYPE_ACQUISITION_PRICE_DEALER_ASC","SORT_TYPE_ACQUISITION_PRICE_DEALER_DESC","SORT_TYPE_ACQUISITION_PRICE_EFFECTIVE_DATE_ASC","SORT_TYPE_ACQUISITION_PRICE_EFFECTIVE_DATE_DESC","SORT_TYPE_ACQUISITION_TRANSACTION_ASC","SORT_TYPE_ACQUISITION_TRANSACTION_DESC","SORT_TYPE_ACQUISITION_METHOD_NAME_ASC","SORT_TYPE_ACQUISITION_METHOD_NAME_DESC","SORT_TYPE_ACQUISITION_SOURCE_ASC","SORT_TYPE_ACQUISITION_SOURCE_DESC","SORT_TYPE_ACQUISITION_STATUS_LABEL_ASC","SORT_TYPE_ACQUISITION_STATUS_LABEL_DESC","SORT_TYPE_ACQUISITION_GALLERY_ASC","SORT_TYPE_ACQUISITION_GALLERY_DESC","SORT_TYPE_EXHIBITION_ASC","SORT_TYPE_EXHIBITION_DESC","SORT_TYPE_ENTITY_MEMBER_ASC"],"paceLocations":[{"entityId":29432,"entityName":"CHESA BÜSIN","addressId":28853,"street":"Engadin","city":"Zuoz","state":"","zipPostalCode":"CH-7524","country":"Switzerland","subLocationName":null,"addressText":"Engadin - Zuoz, CH-7524, Switzerland"},{"entityId":51951,"entityName":"CONSTANTINE","addressId":28809,"street":"c/o Constantine Ltd Constantine House 20-26 Sandgate Street","city":"London","state":"","zipPostalCode":"SE15 1LE","country":"United Kingdom","subLocationName":null,"addressText":"c/o Constantine Ltd Constantine House 20-26 Sandgate Street - London, SE15 1LE, United Kingdom"},{"entityId":51959,"entityName":"MARTINSPEED GLASSHOUSE","addressId":18077,"street":"7 Glasshouse Walk","city":"London","state":"","zipPostalCode":"SE11 5ES","country":"United Kingdom","subLocationName":null,"addressText":"7 Glasshouse Walk - London, SE11 5ES, United Kingdom"},{"entityId":51960,"entityName":"MARTINSPEED HAYES","addressId":28585,"street":"163 Clayton Road","city":"Hayes","state":"","zipPostalCode":"UB3 1AX","country":"United Kingdom","subLocationName":null,"addressText":"163 Clayton Road - Hayes, UB3 1AX, United Kingdom"},{"entityId":40694,"entityName":"MOLLIE DENT-BROCKLEHURST","addressId":29031,"street":"Sudeley Castle","city":"Winchcombe","state":"Gloucestershire","zipPostalCode":"GL54 5JD","country":"United Kingdom","subLocationName":null,"addressText":"Sudeley Castle - Winchcombe, Gloucestershire, GL54 5JD, United Kingdom"},{"entityId":17090,"entityName":"PACE 508 AND 510 W. 25TH ST.","addressId":15375,"street":"508 and 510 West 25th Street","city":"New York","state":"NY","zipPostalCode":"10001","country":"United States","subLocationName":null,"addressText":"508 and 510 West 25th Street - New York, NY, 10001, United States"},{"entityId":17091,"entityName":"PACE 508 W. 25TH ST","addressId":15383,"street":"508 W. 25th Street","city":"New York","state":"NY","zipPostalCode":"10001","country":"United States","subLocationName":null,"addressText":"508 W. 25th Street - New York, NY, 10001, United States"},{"entityId":23,"entityName":"PACE 510 WEST 25TH ST. ROOF","addressId":15468,"street":"510 W. 25th Street","city":"New York","state":"","zipPostalCode":"","country":"United States","subLocationName":null,"addressText":"510 W. 25th Street - New York, United States"},{"entityId":17093,"entityName":"PACE 534 W. 25TH ST","addressId":16008,"street":"534 West 25th Street","city":"New York","state":"NY","zipPostalCode":"10001","country":"United States","subLocationName":null,"addressText":"534 West 25th Street - New York, NY, 10001, United States"},{"entityId":17094,"entityName":"PACE 55TH ST","addressId":17446,"street":"625 West 55th Street","city":"New York","state":"NY","zipPostalCode":"10019","country":"United States","subLocationName":null,"addressText":"625 West 55th Street - New York, NY, 10019, United States"},{"entityId":17096,"entityName":"PACE 57TH ST","addressId":11171,"street":"32 East 57th Street","city":"New York","state":"NY","zipPostalCode":"10022","country":"United States","subLocationName":null,"addressText":"32 East 57th Street - New York, NY, 10022, United States"},{"entityId":17096,"entityName":"PACE 57TH ST","addressId":29933,"street":"32 E. 57th Street, 5th Floor","city":"New York","state":"NY","zipPostalCode":"10022","country":"United States","subLocationName":null,"addressText":"32 E. 57th Street, 5th Floor - New York, NY, 10022, United States"},{"entityId":17097,"entityName":"PACE ACCOUNTING","addressId":17444,"street":"625 W.55th St. 2nd fl.","city":"New York","state":"NY","zipPostalCode":"10019","country":"United States","subLocationName":null,"addressText":"625 W.55th St. 2nd fl. - New York, NY, 10019, United States"},{"entityId":17100,"entityName":"PACE BEIJING","addressId":19116,"street":"798 Art District No. 2 JiuXianQiao Road Chaoyang District","city":"Beijing","state":"","zipPostalCode":"100015","country":"China","subLocationName":null,"addressText":"798 Art District No. 2 JiuXianQiao Road Chaoyang District - Beijing, 100015, China"},{"entityId":17100,"entityName":"PACE BEIJING","addressId":19118,"street":"798 Art District No 2 Jiuxiangiao Road","city":"Chaoyang District, Beijing","state":"","zipPostalCode":"100015","country":"China","subLocationName":null,"addressText":"798 Art District No 2 Jiuxiangiao Road - Chaoyang District, Beijing, 100015, China"},{"entityId":17100,"entityName":"PACE BEIJING","addressId":19123,"street":"798 Arts District No. 2 Jiuxianqiao Road","city":"Chaoyang District, Beijing","state":"","zipPostalCode":"","country":"China","subLocationName":null,"addressText":"798 Arts District No. 2 Jiuxianqiao Road - Chaoyang District, Beijing, China"},{"entityId":17100,"entityName":"PACE BEIJING","addressId":25853,"street":"P.O.Box 8502 798 Art District No. 2 JiuXianQiao Road","city":"Chaoyang District, Beijing","state":"","zipPostalCode":"100015","country":"China","subLocationName":null,"addressText":"P.O.Box 8502 798 Art District No. 2 JiuXianQiao Road - Chaoyang District, Beijing, 100015, China"},{"entityId":17100,"entityName":"PACE BEIJING","addressId":29204,"street":"Exhibition Space B 798 Art District No. 2 JiuXianQiao Road Chaoyang District","city":"Beijing","state":"","zipPostalCode":"","country":"China","subLocationName":null,"addressText":"Exhibition Space B 798 Art District No. 2 JiuXianQiao Road Chaoyang District - Beijing, China"},{"entityId":50418,"entityName":"PACE BEIJING STORAGE","addressId":29212,"street":"Hegezhuang Village Cuigezhuang Country, Chaoyang District","city":"Beijing","state":"","zipPostalCode":"100018","country":"China","subLocationName":null,"addressText":"Hegezhuang Village Cuigezhuang Country, Chaoyang District - Beijing, 100018, China"},{"entityId":50418,"entityName":"PACE BEIJING STORAGE","addressId":29231,"street":"No 1. Art District Heiqiao Brigade Plant, Cuigezhuang County, Chaoyang District","city":"Beijing","state":"","zipPostalCode":"100015","country":"United States","subLocationName":null,"addressText":"No 1. Art District Heiqiao Brigade Plant, Cuigezhuang County, Chaoyang District - Beijing, 100015, United States"},{"entityId":17106,"entityName":"PACE GALLERY MENLO PARK","addressId":10520,"street":"300 El Camino Real","city":"Menlo Park","state":"California","zipPostalCode":"94025","country":"United States","subLocationName":null,"addressText":"300 El Camino Real - Menlo Park, California, 94025, United States"},{"entityId":17111,"entityName":"PACE LIC (PITA STORAGE)","addressId":12204,"street":"36-19 35th Street","city":"Long Island City","state":"NY","zipPostalCode":"11106","country":"United States","subLocationName":null,"addressText":"36-19 35th Street - Long Island City, NY, 11106, United States"},{"entityId":17113,"entityName":"PACE LINDEN","addressId":7268,"street":"2025 East Linden Avenue","city":"Linden","state":"NJ","zipPostalCode":"07036","country":"United States","subLocationName":null,"addressText":"2025 East Linden Avenue - Linden, NJ, 07036, United States"},{"entityId":17113,"entityName":"PACE LINDEN","addressId":30786,"street":"2025 East Linden Avenue","city":"Linden","state":"New Jersey","zipPostalCode":"07036","country":"United States","subLocationName":null,"addressText":"2025 East Linden Avenue - Linden, New Jersey, 07036, United States"},{"entityId":17114,"entityName":"PACE LONDON","addressId":8077,"street":"222 Regent's Street","city":"London","state":"","zipPostalCode":"W1B 5TR","country":"England","subLocationName":null,"addressText":"222 Regent's Street - London, W1B 5TR, England"},{"entityId":17114,"entityName":"PACE LONDON","addressId":16941,"street":"6-10 Lexington Street","city":"London","state":"","zipPostalCode":"W1F 0LB","country":"United Kingdom","subLocationName":null,"addressText":"6-10 Lexington Street - London, W1F 0LB, United Kingdom"},{"entityId":17114,"entityName":"PACE LONDON","addressId":22064,"street":"c/o Chesa Busin Zuos","city":"","state":"","zipPostalCode":"","country":"Switzerland","subLocationName":null,"addressText":"c/o Chesa Busin Zuos - Switzerland"},{"entityId":42212,"entityName":"PACE LONDON 6BG","addressId":16837,"street":"6 Burlington Gardens","city":"London","state":"W1S 3ET","zipPostalCode":"","country":"United Kingdom","subLocationName":null,"addressText":"6 Burlington Gardens - London, W1S 3ET, United Kingdom"},{"entityId":17124,"entityName":"Pace-Superuser","addressId":27490,"street":"SUPERUSER","city":"SUPERUSER","state":"SUPERUSER","zipPostalCode":"SUPERUSER","country":"United States","subLocationName":null,"addressText":"SUPERUSER - SUPERUSER, SUPERUSER, SUPERUSER, United States"},{"entityId":51032,"entityName":"PITA/PACE 55TH ST","addressId":29830,"street":"625 West 55th Street 2nd floor","city":"New York","state":"NY","zipPostalCode":"10019","country":"United States","subLocationName":null,"addressText":"625 West 55th Street 2nd floor - New York, NY, 10019, United States"},{"entityId":51971,"entityName":"SUDELEY CASTLE","addressId":29096,"street":"Winchcombe","city":"Cheltenham","state":"","zipPostalCode":"GL54 5JD","country":"United Kingdom","subLocationName":null,"addressText":"Winchcombe - Cheltenham, GL54 5JD, United Kingdom"},{"entityId":47693,"entityName":"THE PACE GALLERY LIMITED","addressId":16941,"street":"6-10 Lexington Street","city":"London","state":"","zipPostalCode":"W1F 0LB","country":"United Kingdom","subLocationName":null,"addressText":"6-10 Lexington Street - London, W1F 0LB, United Kingdom"}],"transactionTypes":[{"id":"SALE","value":"Sale"},{"id":"GIFT_DONATION","value":"Gift/Donation"},{"id":"OUTGOING_CONSIGNMENT","value":"Outgoing consignment"},{"id":"OUTGOING_LOAN","value":"Outgoing loan"},{"id":"RESERVE","value":"Reserve"},{"id":"RETURN","value":"Return"},{"id":"APPROVAL","value":"Approval"},{"id":"OFFER","value":"Offer"},{"id":"TRANSFER","value":"Transfer"}],"transactionStatuses":[{"id":"ACTIVE","value":"Active"},{"id":"AGREED","value":"Agreed"},{"id":"CANCELED","value":"Canceled"},{"id":"INVOICED","value":"Invoiced"},{"id":"PROCESSED","value":"Processed"},{"id":"PROMISED","value":"Promised"},{"id":"RETURNED","value":"Returned"},{"id":"SOLD","value":"Sold"}],"paceContacts":[{"id":41,"value":"ABG"},{"id":24,"value":"ACCT"},{"id":70,"value":"AK"},{"id":20,"value":"AKG"},{"id":46,"value":"ARCHIVES"},{"id":122,"value":"CC"},{"id":25,"value":"CD"},{"id":73,"value":"CH"},{"id":55,"value":"CR"},{"id":112,"value":"CX"},{"id":39,"value":"DB"},{"id":61,"value":"DG"},{"id":44,"value":"DLR. SHARE, SEE NOTES"},{"id":23,"value":"EE"},{"id":34,"value":"EJK"},{"id":40,"value":"EM"},{"id":51,"value":"ES"},{"id":113,"value":"FH"},{"id":80,"value":"FL"},{"id":124,"value":"GE"},{"id":59,"value":"Installations"},{"id":125,"value":"IT"},{"id":17,"value":"JB"},{"id":67,"value":"JMB"},{"id":111,"value":"KRJ"},{"id":64,"value":"KWW"},{"id":22,"value":"LL"},{"id":83,"value":"MDB"},{"id":26,"value":"MG"},{"id":74,"value":"MS"},{"id":110,"value":"MZ"},{"id":57,"value":"NONE"},{"id":37,"value":"PAAL"},{"id":82,"value":"PB"},{"id":108,"value":"PGNY"},{"id":31,"value":"PHOTO"},{"id":42,"value":"PM"},{"id":49,"value":"PR"},{"id":19,"value":"PRG"},{"id":43,"value":"PRODUCTION"},{"id":54,"value":"PROV"},{"id":69,"value":"REG"},{"id":50,"value":"SA"},{"id":78,"value":"SD"},{"id":63,"value":"SL"},{"id":12,"value":"S/R"},{"id":48,"value":"TC"},{"id":62,"value":"TDC"},{"id":58,"value":"UNKNOWN"},{"id":52,"value":"VV"},{"id":71,"value":"Warehouse"},{"id":109,"value":"ZS"}],"nfsReasons":[{"id":85,"value":"Condition Issue"},{"id":87,"value":"Consult Acquiring Dealer"},{"id":84,"value":"Other"},{"id":88,"value":"Personal Property"}],"redFlagReasons":[{"id":90,"value":"Artwork in Production"},{"id":91,"value":"Consult Acquiring Dealer"},{"id":89,"value":"Other"}],"rebillReasons":[{"id":105,"value":"Change bill to address"},{"id":104,"value":"Change client"},{"id":102,"value":"Change dealer"},{"id":103,"value":"Change payment terms"},{"id":107,"value":"Change selling price"},{"id":101,"value":"Change ship to address"},{"id":106,"value":"Change tax status"}],"taxStatuses":[{"id":-1,"name":"None","rate":0,"active":false},{"id":1,"name":"Resident","rate":0.08375,"active":true},{"id":2,"name":"Non Resident","rate":0.00000,"active":true},{"id":3,"name":"Tax Exempt","rate":0.00000,"active":true},{"id":4,"name":"Resale","rate":0.00000,"active":true},{"id":5,"name":"Shipment Out of State","rate":0.00000,"active":true},{"id":6,"name":"Mt. Vernon Sales Tax","rate":0.08375,"active":true},{"id":7,"name":"NY Sales Tax - Dutchess","rate":0.08125,"active":true},{"id":9,"name":"NY Sales Tax - Erie","rate":0.08750,"active":true},{"id":11,"name":"Request Resale","rate":0.00000,"active":true},{"id":12,"name":"Nassau Sales Tax","rate":0.08625,"active":true},{"id":13,"name":"NY Sales Tax - Madison","rate":0.08000,"active":true},{"id":14,"name":"NY Sales Tax - NYC","rate":0.08875,"active":true},{"id":15,"name":"Suffolk Sales Tax","rate":0.08625,"active":true},{"id":17,"name":"NJ Sales Tax","rate":0.07000,"active":true},{"id":18,"name":"NY Sales Tax - Westchester","rate":0.07375,"active":true},{"id":19,"name":"Albany Sales Tax","rate":0.08000,"active":true},{"id":20,"name":"CA sales tax","rate":0.09000,"active":true},{"id":21,"name":"CA -- Santa Monica","rate":0.09500,"active":true},{"id":22,"name":"CA -- San Francisco","rate":0.08750,"active":true},{"id":24,"name":"CA - Montecito","rate":0.08000,"active":true},{"id":25,"name":"CA -- Newport Beach","rate":0.08000,"active":true},{"id":26,"name":"CA - Palo Alto","rate":0.08750,"active":true},{"id":23,"name":"CA -- Napa","rate":0.08000,"active":true},{"id":27,"name":"CA -- Los Altos","rate":0.08750,"active":true},{"id":28,"name":"Import VAT 5%","rate":0.05000,"active":true},{"id":29,"name":"VAT 20%","rate":0.20000,"active":true},{"id":89,"name":"LA sales tax ","rate":0.09000,"active":true},{"id":88,"name":"CA - Los Gatos","rate":0.08750,"active":true},{"id":10,"name":"European VAT","rate":0.07600,"active":true},{"id":16,"name":"Florida Sales Tax","rate":0.06500,"active":true},{"id":8,"name":"NYS Use Tax","rate":0.08875,"active":true}],"ukImportStatuses":[{"id":118,"value":"Bonded Warehouse"},{"id":127,"value":"Exported"},{"id":114,"value":"Free Circulation"},{"id":117,"value":"NIRU"},{"id":128,"value":"NIRU - Non Pace"},{"id":126,"value":"Other"},{"id":115,"value":"Temporary Admission"},{"id":129,"value":"Temporary Admission - Non Pace"},{"id":116,"value":"Temporary Removal"}],"movementReasons":[{"id":"OUT_ON_CONSIGNMENT","value":"Out On Consignment"},{"id":"OUT_ON_LOAN","value":"Out On Loan"},{"id":"OUT_ON_APPROVAL","value":"Out On Approval"},{"id":"STORAGE","value":"Storage"},{"id":"FRAMER","value":"Framer"},{"id":"CONSERVATOR","value":"Conservator"},{"id":"DELIVERED_CUSTOMER","value":"Delivered Customer"},{"id":"GIFT_DONATION","value":"Gift Donator"},{"id":"TO_FABRICATOR","value":"To Fabricator"},{"id":"TEMPORARY_LOAN","value":"Temporary Loan"},{"id":"INVENTORY","value":"Inventory"},{"id":"TO_SHOW","value":"To Show"},{"id":"PACKING_CRATING","value":"Packing Crating"},{"id":"PHOTOGRAPHY","value":"Photography"},{"id":"OTHER","value":"Other"},{"id":"INCOMING_CONSIGNMENT","value":"Incoming Consignment"},{"id":"PURCHASE","value":"Purchase"},{"id":"INCOMING_LOAN","value":"Incoming Loan"},{"id":"INCOMING_PERSONAL_PROPERTY","value":"Incoming Personal Property"},{"id":"RETURN","value":"Return"},{"id":"SUBSUMED","value":"Subsumed"},{"id":"CLIENT_VIEWING","value":"Client Viewing"},{"id":"INSTALLATION_EXHIBITION","value":"Installation Exhibition"},{"id":"ART_FAIR","value":"Art Fair"},{"id":"TA_GUARANTEE","value":"TA Guarantee"},{"id":"TA_VAT_PAID_ON_DEPOSIT","value":"TA VAT Paid On Deposit"},{"id":"HOME_USE_VAT_PAID","value":"Home Use Vat Paid"}],"approvalTypes":[{"id":"STRAIGHT_TO_CLIENT","value":"Straight To Client"},{"id":"TO_CLIENT_WITH_COMMISSION","value":"To Client With Commission"},{"id":"TO_CONSULTANT_OTHER_DEALER","value":"To Consultant / Other Dealer"}],"resultDisplayStyles":[{"id":"gallery","value":"Gallery"},{"id":"list","value":"List"}],"measureUnits":["cm","in"],"paceEntities":[{"id":7,"value":"Pace Art Asia Ltd"},{"id":8,"value":"Paceart (Beijing) Commercial Co Ltd"},{"id":10,"value":"Pace Art HK Ltd"},{"id":2,"value":"The Pace Gallery LLC"},{"id":5,"value":"The Pace Gallery Ltd"},{"id":11,"value":"The Pace Gallery Ltd HK"}],"userProfile":{"logonId":"CHarnden","active":true,"photoLo":null,"email":"","paceContact":{"id":73,"value":"CH"},"paceEntity":{"id":2,"value":"The Pace Gallery LLC"},"location":{"entityId":17096,"entityName":"PACE 57TH ST","addressId":11171,"street":"32 East 57th Street","city":"New York","state":"NY","zipPostalCode":"10022","country":"United States","subLocationName":null,"addressText":"32 East 57th Street - New York, NY, 10022, United States"},"defaultCurrency":"USD","defaultResultOrder":"SORT_TYPE_RELEVANCY_DESC","defaultResultDisplayStyle":"gallery","numberOfItemsDisplayedInLists":9,"userRegions":[{"id":130,"homeRegion":true},{"id":6,"homeRegion":false},{"id":131,"homeRegion":false},{"id":4,"homeRegion":false},{"id":9,"homeRegion":false}],"otherPaceContacts":[],"lastUpdated":1436766941712,"lastUpdator":"mleslie","timeFormat":"h:mm:ss a","dateFormat":"MM/dd/yyyy","numberFormat":"#,##0","reportDefaults":null,"refineByDefaults":"{\"sortType\":\"SORT_TYPE_RELEVANCY_DESC\"}","privileges":["ABO_EDIT","ABO_EDIT_CROSS_REGION","ABO_EDIT_EXTENDED","ABO_VIEW","ACCESSION","ACCESSION_CROSS_REGION","ACCESSION_UPDATE_ORIGIN","ACQUISITION_COMMENTS_EDIT","ACQUISITION_COMMENTS_EDIT_CROSS_REGION","ACQUISITION_COMMENTS_VIEW","ADVANCED_SEARCH","APPROVAL_EDIT","APPROVAL_EDIT_EXTENDED","APPROVE_PRICE_CHANGE","ARTIST_MANAGEMENT","CLASSIFICATION_MANAGEMENT","CONSIGN_EDIT","CONSIGN_EDIT_EXTENDED","CONTACT_MANAGEMENT","CONTACT_SEARCH","COST_ACCESS","DIGITAL_ARCHIVE","DIGITAL_ARCHIVE_EDIT","DIGITAL_IMAGING","DISPERSAL_INFORMATION_EDIT","EDIT_INVENTORY_NUMBER","EXHIBITION_CHANGE_STATUS","EXHIBITION_EDIT","EXHIBITION_EDIT_ACTIVE","EXHIBITION_EDIT_EXTENDED","EXHIBITION_LIST_ADD_ACTIVE","EXHIBITION_LIST_EDIT","EXHIBITION_LIST_EDIT_ACTIVE","EXHIBITION_LIST_EDIT_EXTENDED","EXHIBITION_LIST_REMOVE_ACTIVE","EXHIBITION_SEARCH","GIFT_CROSS_REGION","GIFT_EDIT","GIFT_EDIT_EXTENDED","GIFT_VIEW","GLOBAL_LIST_MANAGEMENT","GROUP_MANAGEMENT","GROUP_SEARCH","HELP","HOLDING_PERIOD_EDIT","INSURANCE_REPORT","INVENTORY_REPORTS","IN_BOX","LOAN_EDIT","LOAN_EDIT_EXTENDED","LOCATION_HISTORY_EDIT","NARRATIVE_EDIT","NARRATIVE_EDIT_CROSS_REGION","NARRATIVE_EDIT_EXTENDED","NARRATIVE_READ","NFS_EDIT","NFS_EDIT_CROSS_REGION","NFS_EDIT_EXTENDED","NFS_VIEW","NICKNAME_HISTORY","OFFER_EDIT","OFFER_EDIT_EXTENDED","PALETTE_ADMINISTRATION","PALETTE_REPORTS","PHOTO_ARCHIVES_MANAGEMENT","POST_RELEASE_EDIT","PRICE_HISTORY_VIEW","PRINT_LARGE_IMAGE","PRINT_PHOTO_LABELS","PRINT_SNF","PROVENANCE_EDIT","PUBLIC_LIST_EDIT_ACTIVE","PUBLIC_LIST_EDIT_PENDING","PUBLIC_LIST_EDIT_PENDING_EXTENDED","PW_REPORTS","Palette","RECEIVING","RECEIVING_EXTENDED","RECEIVING_LOG_EDIT","RECEIVING_ORDER_EDIT","RECEIVING_ORDER_EDIT_EXT","RECEPTION","RECEPTION_CROSS_REGION","RED_FLAG_EDIT","RED_FLAG_EDIT_CROSS_REGION","RED_FLAG_EDIT_EXTENDED","RED_FLAG_VIEW","REGISTRAR_MEMO","RENEW_RESERVE","RESALE_SEARCH","RESERVE_EDIT","RESERVE_EDIT_CROSS_REGION","RESERVE_EDIT_EXTENDED","RESERVE_EXTEND","RESERVE_VIEW","RETURN_CROSS_REGION","RETURN_EDIT","RETURN_EDIT_EXTENDED","RETURN_VIEW","SALE_EDIT","SALE_EDIT_EXTENDED","SALE_EDIT_INVOICE_NUMBER","SALE_INVOICING","SET_ARTWORK_OFFICIAL","SET_INSURANCE_VALUE","SHIPMENT","SHIPMENT_CROSS_REGION","SHIPPING","SHIPPING_LOG_EDIT","SHIPPING_ORDER_EDIT","SHIP_ORDER_EDIT_EXTENDED","S_R_MULTIPLE_LOCATION","TABULAR_BILLED_NOT_DELIVERED","TABULAR_SOLD_NEEDS_SHIPPING_RECEIPT","TABULAR_SOLD_NOT_BILLED","TRANSFER_EDIT","TRANSFER_EDIT_CROSS_REGION","TRANSFER_EDIT_EXTENDED","TRANSFER_VIEW","UK_IMPORT_STATUS_EDIT","UK_IMPORT_STATUS_VIEW","UPDATE_ACQUISITION","UPDATE_PRICE_CHANGE","VIEW_CONFIDENTIAL_PIECES"]}};
+
+    </script>
+
+    
+        
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    $(document).ajaxStart(function(){
+        NProgress.start();
+    });
+    $(document).ajaxStop(function(){
+        NProgress.done();
+    });
+
+
+    $(function() {
+        $(document).idleTimer(14400000);
+        $(document).on("idle.idleTimer", function() {
+            window.application.showSessionTimeoutDialog();
+        });
+    });
+
+</script>
+    
+
+    <!-- Error Dialog Template -->
+    <div id="dialog-error" class="modal" role="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title">
+                        <span></span>
+                        <a class="close" data-dismiss="modal"></a>
+                    </div>
+                </div>
+                <div class="modal-body" style="overflow:hidden;margin-right:15px;">
+                    <p></p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" onclick="$('#dialog-error').modal('hide');">Accept</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- #gray-overlay.modal-backdrop is the modal container on the desktop site. It sits over the website and prevents users from clicking through or using the website while a modal is actionable -->
+    <div class='modal-backdrop' id='gray-overlay' style="display: none"></div>
+
+    <script type="text/javascript">
+
+        Palette.environment = "qa"; // TODO - Determine active environment through spring profile
+
+        // Palette URLs
+        Palette.urls.rootUrl = "/palette/";
+
+        Palette.urls.baseImgUrl = "/palette/artwork/image";
+        Palette.urls.loadingGif = "/palette/resources/img/ajax-loader.gif";
+        Palette.urls.resourceRoot = "/palette/resources/js/palette/";
+        Palette.urls.acquisitions = "/palette/acquisition/ajax/get";
+        Palette.urls.acquisitionTransactions = "/palette/transaction/ajax/get";
+        Palette.urls.acquisitionTransactionsFull = "/palette/transaction/ajax/full";
+        Palette.urls.artwork.acquisition = "/palette/acquisition/current/get";
+        Palette.urls.artwork.follow = "/palette/artwork/follow";
+        Palette.urls.artworkImage = "/palette/artwork/image/id";
+        Palette.urls.card.priceChangeHistory = "/palette/pricechange/ajax/get";
+        Palette.urls.card.priceChangeHistoryAll = "/palette/pricechange/ajax/getAll";
+        Palette.urls.card.editions = "/palette/artwork/editions";
+        Palette.urls.card.memos = "/palette/memos/ajax/get";
+        Palette.urls.card.photoHistory = "photo/ajax/get";
+        Palette.urls.card.tags = "tags/ajax/get";
+        Palette.urls.card.narrative = "narrative/ajax/get";
+        Palette.urls.card.comments = "acquisition/comments/ajax/get";
+        Palette.urls.card.movements = "movement/ajax/get";
+        Palette.urls.card.reserves = "/palette/reserve/ajax/get";
+        Palette.urls.card.ukImportStatus = "ukImportStatus/list";
+        Palette.urls.card.saveNarrative = "/palette/narrative/ajax/update";
+        Palette.urls.exhibition.get = "/palette/exhibition";
+        Palette.urls.exhibition.permission = "/palette/exhibition/permission";
+        Palette.urls.inventoryCard = "/palette/artwork/get";
+        Palette.urls.lists.addItem = "/palette/list/addItem";
+        Palette.urls.lists.newList = "/palette/list/newList";
+        Palette.urls.lists.recentLists = "/palette/list/lastAccessListNames";
+        Palette.urls.lists.getListNames = "/palette/list/listNames";
+        Palette.urls.lists.rename = "/palette/list/rename"
+        Palette.urls.lists.copy = "/palette/list/copy"
+        Palette.urls.lists.delete = "/palette/list/delete"
+        Palette.urls.lists.merge = "/palette/list/merge"
+        Palette.urls.lists.permission = "/palette/list/permission"
+        Palette.urls.logout = "/palette/j_spring_security_logout";
+        Palette.urls.provenance = "/palette/artwork/image?imageName=Provenance/";
+        Palette.urls.search.artists = "/palette/search/artists/all";
+        Palette.urls.search.autocomplete = "/palette/quicksearch";
+        Palette.urls.search.autocompleteAddress = "/palette/search/address/get";
+        Palette.urls.search.autocompleteExhibition = "/palette/exhibition/get/title";
+        Palette.urls.search.autocompleteOtherLocations = "/palette/search/otherlocations/get";
+        Palette.urls.search.autocompletePaceContact = "/palette/search/paceContacts/get";
+        Palette.urls.search.basic = "/palette/search";
+        Palette.urls.search.classifications = "/palette/search/classifications";
+        Palette.urls.search.changeHistory = "/palette/changehistory/:table/:id";
+        Palette.urls.search.changeHistoryReserves = "/palette/changehistory/reserves/ajax/get";
+        Palette.urls.search.entities = "/palette/search/entities";
+        Palette.urls.search.exhibitions = "/palette/exhibition/ActivePending/all";
+        Palette.urls.search.exhibitionsFull = "/palette/exhibition/ActivePending/full";
+        Palette.urls.search.exhibitionsById = "/palette/exhibition/get/id";
+        Palette.urls.search.moreLikeThis = "/palette/search/ajax/mlt";
+        Palette.urls.search.paceArtists = "/palette/search/artists/pace";
+        Palette.urls.search.filter = "/palette/search/filter/ajax/get";
+        Palette.urls.search.lists = "/palette/list/listSearch";
+        Palette.urls.search.refine = "/palette/get/refine";
+        Palette.urls.search.sublocations = "/palette/search/sublocations";
+        Palette.urls.share.export = "/palette/reports/create";
+        Palette.urls.share.email = "/palette/reports/email";
+        Palette.urls.transactions.bulkPermissions = "/palette/bulk/permission";
+        Palette.urls.transactions.NFSEdit = "/palette/nfs/edit";
+		Palette.urls.transactions.NFSView = "/palette/nfs/:transactionId";
+		Palette.urls.transactions.ABOEdit = "/palette/abo/edit";
+		Palette.urls.transactions.ABOView = "/palette/abo/:transactionId";
+        Palette.urls.transactions.RedFlagEdit = "/palette/redflag/edit";
+		Palette.urls.transactions.RedFlagView = "/palette/redflag/:transactionId";
+		Palette.urls.transactions.ReserveEdit = "/palette/reserve/edit";
+        Palette.urls.transactions.ReserveView = "/palette/reserve/:transactionId";
+        Palette.urls.attachment = "/palette/attachment";
+        Palette.urls.saveDefaultCriteria = "/palette/userProfile/saveDefaultCriteria";
+        Palette.urls.search.copy = "/palette/reports/copypaste/create";
+        Palette.urls.search.zeroclipboardswf = "/palette/resources/swf/ZeroClipboard.swf";
+        Palette.urls.notifications.subscriptions = "/palette/subscriptions";
+        Palette.urls.notifications.notifications = "/palette/notifications";
+        Palette.urls.notifications.notificationsByTime = "/palette/notificationsByTime";
+        Palette.urls.notifications.notificationCount = "/palette/notificationCount";
+        Palette.urls.profile = "/palette/userprofile/update";
+
+        // Palette settings
+        Palette.userDateFormat = "MM/dd/yyyy";
+        Palette.userEmail = "";
+        Palette.userProfileSizeUnit = "Inches";
+        Palette.userDefaultSort = "SORT_TYPE_RELEVANCY_DESC";
+        try {
+            Palette.userRefineByDefaults = JSON.parse('{"sortType":"SORT_TYPE_RELEVANCY_DESC"}');
+        } catch (e) {
+            Palette.userRefineByDefaults = {};
+        }
+
+        Palette.userDefaultDisplayStyle = "gallery";
+        Palette.userPaceContactId = "73";
+        Palette.userPaceEntityId = "2";
+        Palette.userPaceLocationEntityId = "17096";
+        Palette.userPaceLocationAddressId = "11171";
+        Palette.userDefaultCurrency = "USD";
+        Palette.userProfileImage = "";
+        Palette.userRegionIds = [];  Palette.userRegionIds.push(130);Palette.userRegionIds.push(6);Palette.userRegionIds.push(131);Palette.userRegionIds.push(4);Palette.userRegionIds.push(9);
+        Palette.userTimeFormat = "h:mm:ss a";
+        Palette.paceSSO = "YftjfFE6nOMW-6KZNO8rCgmyr39Jbd3GKOgb1asuaxk,";
+        Palette.version = "1618";
+    </script>
+
+
+    <script type="text/javascript">
+
+    
+        palette.Application.init(); // Launch Application
+    
+    </script>
+</body>
+</html>
+
