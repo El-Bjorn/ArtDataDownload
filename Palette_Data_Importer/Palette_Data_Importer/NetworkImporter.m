@@ -72,6 +72,9 @@ extern DataStorage *ds;
     [task resume];
 }
 
+#define WIDTH_KEY @"artworkImageWidth"
+#define HEIGHT_KEY @"artworkImageHeight"
+
 -(Artwork*) createArtworkFromArtDict:(NSDictionary*)dict {
     NSLog(@"creating artwork....");
     Artwork *newArt = [NSEntityDescription insertNewObjectForEntityForName:@"Artwork" inManagedObjectContext:ds.context];
@@ -80,7 +83,12 @@ extern DataStorage *ds;
     newArt.title = dict[@"artworkTitle"];
     newArt.creationDate =  [NSString stringWithFormat:@"%@-%@",dict[@"artworkYearFrom"],dict[@"artworkYearTo"]];//dict[@"artworkYearTo"];
     newArt.statusLabel = dict[@"acquisitionStatusLabel"];
-    
+    if (![dict[WIDTH_KEY] isKindOfClass:[NSNull class]]) {
+        newArt.artworkImageWidth = dict[WIDTH_KEY];
+    }
+    if (![dict[HEIGHT_KEY] isKindOfClass:[NSNull class]]) {
+        newArt.artworkImageHeight = dict[HEIGHT_KEY];
+    }
     NSError *savErr = nil;
     [ds.context save:&savErr];
     if (savErr) {
