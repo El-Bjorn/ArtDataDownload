@@ -23,6 +23,8 @@ extern DataStorage *ds;
     return self;
 }
 
+int num_artworks = 0;
+
 -(void) authenticate {
     NSURL *url = [NSURL URLWithString:@"http://palette-dev.pacegallery.com/palette/j_spring_security_check"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
@@ -33,16 +35,23 @@ extern DataStorage *ds;
     NSURLSessionTask *task = [self.urlsession dataTaskWithRequest:request
                                                 completionHandler:^(NSData *data,
                                                                     NSURLResponse *response,
-                                                                    NSError *error){
-                    // we're authenticated
-                    [self artArrayForIndex:0 withCompBlock:^(NSArray *artDicts, NSError *err) {
-                        NSLog(@"got artwork array: %@",artDicts);
-                        for (NSDictionary *d in artDicts) {
-                            Artwork *a = [self createArtworkFromArtDict:d];
-                            NSLog(@"created artwork: %@",a);
-                        }
-                        //NSLog(@"artDicts = %@",artDicts);
-                    }];
+                                                                    NSError *error)
+    {
+        // we're authenticated
+        int i;
+        for (i=0; i< 100 ; i++ ) {
+            [self artArrayForIndex:i withCompBlock:^(NSArray *artDicts, NSError *err) {
+                NSLog(@"got artwork array: %@",artDicts);
+                for (NSDictionary *d in artDicts) {
+                    Artwork *a = [self createArtworkFromArtDict:d];
+                    NSLog(@"created artwork: %@",a);
+                    printf("number of artworks created: %d\n",++num_artworks);
+                }
+                //NSLog(@"artDicts = %@",artDicts);
+            }];
+
+        }
+        
     }];
     [task resume];
 }
@@ -81,7 +90,7 @@ extern DataStorage *ds;
     newArt.paceID = dict[@"artworkPgNumber"];
     newArt.artistNames = dict[@"artistName"];
     newArt.title = dict[@"artworkTitle"];
-    newArt.creationDate =  [NSString stringWithFormat:@"%@-%@",dict[@"artworkYearFrom"],dict[@"artworkYearTo"]];//dict[@"artworkYearTo"];
+    newArt.creationDate =  dict[@"artworkDate"];//dict[@"artworkYearTo"];
     newArt.statusLabel = dict[@"acquisitionStatusLabel"];
     if (![dict[WIDTH_KEY] isKindOfClass:[NSNull class]]) {
         newArt.artworkImageWidth = dict[WIDTH_KEY];

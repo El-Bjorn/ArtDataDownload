@@ -17,7 +17,7 @@ int main(int argc, const char * argv[]) {
         ds = [[DataStorage alloc] init];
         NetworkImporter *ni = [[NetworkImporter alloc] init];
         [ni authenticate];
-        sleep(10);
+        sleep(30);
         
     }
     return 0;
