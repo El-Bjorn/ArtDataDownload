@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14E46" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8175.2" systemVersion="14E46" minimumToolsVersion="Xcode 4.3">
     <entity name="Artwork" representedClassName="Artwork" syncable="YES">
         <attribute name="artistNames" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="artworkID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="artworkImageHeight" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="artworkImageWidth" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="creationDate" optional="YES" attributeType="String" syncable="YES"/>
@@ -9,8 +10,13 @@
         <attribute name="statusColorName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="statusLabel" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="imageData" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ImageData" syncable="YES"/>
+    </entity>
+    <entity name="ImageData" syncable="YES">
+        <attribute name="artworkImage" optional="YES" attributeType="Transformable" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Artwork" positionX="-63" positionY="-18" width="128" height="165"/>
+        <element name="Artwork" positionX="-4430" positionY="-990" width="128" height="193"/>
+        <element name="ImageData" positionX="-4626" positionY="-801" width="128" height="58"/>
     </elements>
 </model>

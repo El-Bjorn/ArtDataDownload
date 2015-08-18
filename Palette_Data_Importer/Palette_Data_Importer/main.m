@@ -12,12 +12,21 @@
 
 DataStorage *ds = nil;
 
+// when we're done importing
+dispatch_semaphore_t done_sema;
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        done_sema = dispatch_semaphore_create(0);
+        
         ds = [[DataStorage alloc] init];
         NetworkImporter *ni = [[NetworkImporter alloc] init];
         [ni authenticate];
-        sleep(30);
+        
+        while (dispatch_semaphore_wait(done_sema, DISPATCH_TIME_NOW)) {
+            [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0]];
+        }
+        NSLog(@"ok we're done");
         
     }
     return 0;
