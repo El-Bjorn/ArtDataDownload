@@ -113,47 +113,67 @@ int num_artworks = 0;
     newArt.artistNames = dict[@"artistName"];
     newArt.title = dict[@"artworkTitle"];
     newArt.creationDate =  dict[@"artworkDate"];
-    newArt.statusLabel = dict[@"acquisitionStatusLabel"];
-    // making them all green for now
-    newArt.statusColorName = @"green";
+    
+    newArt.statusLabel = dict[@"acquisitionStatusLabel"]; // TDB
+    // Cracked-out status logic
+    NSString *acquisStatus = dict[@"acquisitionStatus"];
+    if ([acquisStatus isEqualToString:@"GIFTED"] || [acquisStatus isEqualToString:@"RETURNED"] ||[acquisStatus isEqualToString:@"SOLD"]) {
+        newArt.statusColorName = @"red";
+        newArt.statusLabel = acquisStatus;
+    } else if ([acquisStatus isEqualToString:@"ACTIVE"]){
+        newArt.statusLabel = @"";
+        newArt.statusColorName = @"orange";
+    } else {
+        newArt.statusLabel = @"Available";
+        newArt.statusColorName = @"green";
+    }
+    
     if (dict[@"artworkClassificationName"]==[NSNull null]){
-        newArt.classificationName = @"";
+        newArt.classificationName = @"NONE";
     } else {
         newArt.classificationName = dict[@"artworkClassificationName"];
     }
-    newArt.mediumName = dict[@"artworkMediumName"];
-    newArt.dimensions = dict[@"artworkDimensions"];
+    newArt.mediumName = dict[@"artworkMediumName"]; // @"NONE"
+    newArt.dimensions = dict[@"artworkDimensions"]; // @"NONE"
     if (dict[@"artworkEditionInfo"] == [NSNull null]) {
-        newArt.artworkEditionInfo = @"";
+        newArt.artworkEditionInfo = nil;
     } else {
         newArt.artworkEditionInfo = dict[@"artworkEditionInfo"];
     }
     newArt.regionName = dict[@"acquisitionRegionNames"][0];
     newArt.regionID = dict[@"acquisitinRegionIds"][0];
     newArt.locationName = dict[@"acquisitionLocationName"];
-    time_t acq_loc_date;
     if (dict[@"acquisitionLocationDate"]==[NSNull null]){
-        acq_loc_date = 0;
+        //acq_loc_date = 0;
+        newArt.locationDate = nil;
     } else {
+        time_t acq_loc_date;
         acq_loc_date = [dict[@"acquisitionLocationDate"] integerValue];
+        newArt.locationDate = [NSDate dateWithTimeIntervalSince1970:acq_loc_date];
     }
-    newArt.locationDate = [NSDate dateWithTimeIntervalSince1970:acq_loc_date];
-    
-    newArt.price = [NSDecimalNumber one]; // TBD
-    newArt.priceCurrency = @"USD"; // TBD
+    // parse acquisitionPrice
+    NSString *priceStr = dict[@"acquisitionPrice"];
+    if ((id)priceStr == [NSNull null]) {
+        newArt.price = nil;
+        newArt.priceCurrency = nil;
+    } else {
+        NSArray *priceParts = [priceStr componentsSeparatedByString:@","];
+        newArt.price = [NSDecimalNumber decimalNumberWithString:priceParts[0]];
+        newArt.priceCurrency = priceParts[1];
+    }
     
     if (dict[@"acquisitionPriceDealer"]==[NSNull null]) {
         newArt.priceDealer = @"";
     } else {
         newArt.priceDealer = dict[@"acquisitionPriceDealer"];
     }
-    time_t price_effect_date;
     if (dict[@"acquisitionPriceEffectiveDate"]==[NSNull null]){
-        price_effect_date = 0;
+        newArt.priceEffectiveDate = nil;
     } else {
+        time_t price_effect_date;
         price_effect_date = [dict[@"acquisitionPriceEffectiveDate"] integerValue];
+        newArt.priceEffectiveDate = [NSDate dateWithTimeIntervalSince1970:price_effect_date];
     }
-    newArt.priceEffectiveDate = [NSDate dateWithTimeIntervalSince1970:price_effect_date];
     
     
     // artwork image size
