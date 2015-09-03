@@ -1,9 +1,9 @@
 #!/bin/bash
 if (( $# != 1)); then
-        echo "Missing pgid arg"
+        echo "Missing art id arg"
         exit
 fi
 
-pgid=$1
+artid=$1
 
-curl --cookie cookieJar http://palette-dev.pacegallery.com/palette/acquisition/v2/findByArtworkId?artworkId=$pgid | python -m json.tool
+curl --cookie cookieJar http://palette-dev.pacegallery.com/palette/acquisition/v2/findByArtworkId?artworkId=$artid | python -m json.tool

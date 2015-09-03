@@ -112,8 +112,51 @@ int num_artworks = 0;
     newArt.paceID = dict[@"artworkPgNumber"];
     newArt.artistNames = dict[@"artistName"];
     newArt.title = dict[@"artworkTitle"];
-    newArt.creationDate =  dict[@"artworkDate"];//dict[@"artworkYearTo"];
+    newArt.creationDate =  dict[@"artworkDate"];
     newArt.statusLabel = dict[@"acquisitionStatusLabel"];
+    // making them all green for now
+    newArt.statusColorName = @"green";
+    if (dict[@"artworkClassificationName"]==[NSNull null]){
+        newArt.classificationName = @"";
+    } else {
+        newArt.classificationName = dict[@"artworkClassificationName"];
+    }
+    newArt.mediumName = dict[@"artworkMediumName"];
+    newArt.dimensions = dict[@"artworkDimensions"];
+    if (dict[@"artworkEditionInfo"] == [NSNull null]) {
+        newArt.artworkEditionInfo = @"";
+    } else {
+        newArt.artworkEditionInfo = dict[@"artworkEditionInfo"];
+    }
+    newArt.regionName = dict[@"acquisitionRegionNames"][0];
+    newArt.regionID = dict[@"acquisitinRegionIds"][0];
+    newArt.locationName = dict[@"acquisitionLocationName"];
+    time_t acq_loc_date;
+    if (dict[@"acquisitionLocationDate"]==[NSNull null]){
+        acq_loc_date = 0;
+    } else {
+        acq_loc_date = [dict[@"acquisitionLocationDate"] integerValue];
+    }
+    newArt.locationDate = [NSDate dateWithTimeIntervalSince1970:acq_loc_date];
+    
+    newArt.price = [NSDecimalNumber one]; // TBD
+    newArt.priceCurrency = @"USD"; // TBD
+    
+    if (dict[@"acquisitionPriceDealer"]==[NSNull null]) {
+        newArt.priceDealer = @"";
+    } else {
+        newArt.priceDealer = dict[@"acquisitionPriceDealer"];
+    }
+    time_t price_effect_date;
+    if (dict[@"acquisitionPriceEffectiveDate"]==[NSNull null]){
+        price_effect_date = 0;
+    } else {
+        price_effect_date = [dict[@"acquisitionPriceEffectiveDate"] integerValue];
+    }
+    newArt.priceEffectiveDate = [NSDate dateWithTimeIntervalSince1970:price_effect_date];
+    
+    
+    // artwork image size
     if (![dict[WIDTH_KEY] isKindOfClass:[NSNull class]]) {
         newArt.artworkImageWidth = dict[WIDTH_KEY];
     }
