@@ -44,7 +44,7 @@ int num_artworks = 0;
         
         
         //[self downloadImageForPgid:@"01648" withWidth:50];
-        int num_frames = 108;
+        int num_frames = 408;
         int i;
         for (i=0; i< num_frames ; i++ ) {
             [self artArrayForIndex:i withCompBlock:^(NSArray *artDicts, NSError *err) {
@@ -101,10 +101,20 @@ int num_artworks = 0;
 
 -(Artwork*) createArtworkFromArtDict:(NSDictionary*)dict {
     // check if we gots an image
+    NSString *acquisStatus = dict[@"acquisitionStatus"];
+    NSLog(@"acquisStatus= %@ -----------------------------------------",acquisStatus);
+
     if ([dict[WIDTH_KEY] isKindOfClass:[NSNull class]]) {
         NSLog(@"no image, don't add it");
         return nil;
     }
+    NSArray *flagArray = @[ @{ @"flag":@"acquisitionOnConsignmentFlag", @"label":@"Consignment"},
+                            @{ @"flag":@"acquisitionOnLoanFlag", @"label":@"Loan"},
+                            @{ @"flag":@"acquisitionOnApprovalFlag", @"label":@"Approval"},
+                            @{ @"flag":@"acquisitionReservedFlag", @"label":@"Reserved"},
+                            @{ @"flag":@"acquisitionAboFlag", @"label":@"ABO"},
+                            @{ @"flag":@"acquisitionNfsFlag", @"label":@"NFS"},
+                            @{ @"flag":@"acquisitionRedFlag", @"label":@"Red Flag"} ];
     
     NSLog(@"creating artwork....");
     Artwork *newArt = [NSEntityDescription insertNewObjectForEntityForName:@"Artwork" inManagedObjectContext:ds.context];
@@ -112,20 +122,32 @@ int num_artworks = 0;
     newArt.paceID = dict[@"artworkPgNumber"];
     newArt.artistNames = dict[@"artistName"];
     newArt.title = dict[@"artworkTitle"];
-    newArt.creationDate =  dict[@"artworkDate"];
+    if (dict[@"artworkDate"] != [NSNull null]) {
+        newArt.creationDate =  dict[@"artworkDate"];
+    }
     
-    newArt.statusLabel = dict[@"acquisitionStatusLabel"]; // TDB
+    //newArt.statusLabel = dict[@"acquisitionStatusLabel"]; // TDB
     // Cracked-out status logic
-    NSString *acquisStatus = dict[@"acquisitionStatus"];
     if ([acquisStatus isEqualToString:@"GIFTED"] || [acquisStatus isEqualToString:@"RETURNED"] ||[acquisStatus isEqualToString:@"SOLD"]) {
         newArt.statusColorName = @"red";
         newArt.statusLabel = acquisStatus;
     } else if ([acquisStatus isEqualToString:@"ACTIVE"]){
-        newArt.statusLabel = @"";
-        newArt.statusColorName = @"orange";
+        NSString *statusLabel = @"";
+        //newArt.statusLabel = @"";
+        for (NSDictionary *f in flagArray) {
+            if ([dict[ f[@"flag"]] boolValue]==YES) {
+                [statusLabel stringByAppendingString:[NSString stringWithFormat:@"%@ ",f[@"label"]]];
+                newArt.statusColorName = @"orange";
+            }
+        }
+        if (newArt.statusColorName != nil) {
+            newArt.statusLabel = statusLabel;
+        } else {
+            newArt.statusLabel = @"Available";
+            newArt.statusColorName = @"green";
+        }
     } else {
-        newArt.statusLabel = @"Available";
-        newArt.statusColorName = @"green";
+        NSLog(@"problem doing status. No logic for %@",acquisStatus);
     }
     
     if (dict[@"artworkClassificationName"]==[NSNull null]){
