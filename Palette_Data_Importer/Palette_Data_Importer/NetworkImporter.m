@@ -148,7 +148,7 @@ int num_artworks = 0;
         newArt.locationDate = nil;
     } else {
         time_t acq_loc_date;
-        acq_loc_date = [dict[@"acquisitionLocationDate"] integerValue];
+        acq_loc_date = [dict[@"acquisitionLocationDate"] integerValue]/1000;
         newArt.locationDate = [NSDate dateWithTimeIntervalSince1970:acq_loc_date];
     }
     // parse acquisitionPrice
@@ -171,7 +171,7 @@ int num_artworks = 0;
         newArt.priceEffectiveDate = nil;
     } else {
         time_t price_effect_date;
-        price_effect_date = [dict[@"acquisitionPriceEffectiveDate"] integerValue];
+        price_effect_date = [dict[@"acquisitionPriceEffectiveDate"] integerValue]/1000;
         newArt.priceEffectiveDate = [NSDate dateWithTimeIntervalSince1970:price_effect_date];
     }
     
