@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8175.2" systemVersion="14E46" minimumToolsVersion="Xcode 4.3">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8175.2" systemVersion="14F27" minimumToolsVersion="Xcode 4.3">
     <entity name="Artwork" representedClassName="Artwork" syncable="YES">
         <attribute name="artistNames" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="artworkEditionInfo" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="artworkID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="artworkID" optional="YES" attributeType="Integer 64" defaultValueString="0" indexed="YES" syncable="YES"/>
         <attribute name="artworkImageHeight" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="artworkImageWidth" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="classificationName" optional="YES" attributeType="String" syncable="YES"/>
@@ -13,13 +13,14 @@
         <attribute name="locationDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="locationName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mediumName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="paceID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="paceID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="price" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="priceCurrency" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="priceDealer" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="priceEffectiveDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="regionID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="regionName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="searchResultOrder" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="statusColorName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="statusLabel" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
@@ -29,10 +30,10 @@
         <relationship name="twoColumnImage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ImageData" syncable="YES"/>
     </entity>
     <entity name="ImageData" syncable="YES">
-        <attribute name="artworkImage" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="artworkImage" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Artwork" positionX="-4430" positionY="-990" width="128" height="435"/>
-        <element name="ImageData" positionX="-4626" positionY="-801" width="128" height="58"/>
+        <element name="Artwork" positionX="-4430" positionY="-990" width="128" height="450"/>
+        <element name="ImageData" positionX="-4626" positionY="-801" width="128" height="60"/>
     </elements>
 </model>

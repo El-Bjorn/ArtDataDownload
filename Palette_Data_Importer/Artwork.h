@@ -2,7 +2,7 @@
 //  Artwork.h
 //  Palette_Data_Importer
 //
-//  Created by BjornC on 9/2/15.
+//  Created by BjornC on 9/20/15.
 //  Copyright © 2015 Builtlight. All rights reserved.
 //
 

@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		400073601B97E838000D9674 /* Artwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 4000735F1B97E838000D9674 /* Artwork.m */; };
+		400E3F441BACE7E10005B918 /* NSObject+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 400E3F431BACE7E10005B918 /* NSObject+Blocks.m */; };
 		403D6ADE1B728EB6008D1C92 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 403D6ADD1B728EB6008D1C92 /* main.m */; };
 		4044F45D1B728F8100CF253E /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4044F45B1B728F8100CF253E /* Model.xcdatamodeld */; };
 		4044F4631B7294C200CF253E /* DataStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4044F4621B7294C200CF253E /* DataStorage.m */; };
 		4044F4661B72BC1700CF253E /* NetworkImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4044F4651B72BC1700CF253E /* NetworkImporter.m */; };
+		408A8FFF1BAF485C00C26424 /* Artwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 408A8FFE1BAF485C00C26424 /* Artwork.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,9 +28,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4000735D1B97E838000D9674 /* Artwork+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Artwork+CoreDataProperties.h"; sourceTree = "<group>"; };
-		4000735E1B97E838000D9674 /* Artwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Artwork.h; sourceTree = "<group>"; };
-		4000735F1B97E838000D9674 /* Artwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Artwork.m; sourceTree = "<group>"; };
+		400E3F421BACE7C10005B918 /* NSObject+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Blocks.h"; sourceTree = "<group>"; };
+		400E3F431BACE7E10005B918 /* NSObject+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Blocks.m"; sourceTree = "<group>"; };
 		403D6ADA1B728EB6008D1C92 /* Palette_Data_Importer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Palette_Data_Importer; sourceTree = BUILT_PRODUCTS_DIR; };
 		403D6ADD1B728EB6008D1C92 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4044F45C1B728F8100CF253E /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -37,6 +37,9 @@
 		4044F4621B7294C200CF253E /* DataStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataStorage.m; sourceTree = "<group>"; };
 		4044F4641B72BC1700CF253E /* NetworkImporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkImporter.h; sourceTree = "<group>"; };
 		4044F4651B72BC1700CF253E /* NetworkImporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkImporter.m; sourceTree = "<group>"; };
+		408A8FFC1BAF485C00C26424 /* Artwork+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Artwork+CoreDataProperties.h"; sourceTree = "<group>"; };
+		408A8FFD1BAF485C00C26424 /* Artwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Artwork.h; sourceTree = "<group>"; };
+		408A8FFE1BAF485C00C26424 /* Artwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Artwork.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,9 +56,9 @@
 		403D6AD11B728EB6008D1C92 = {
 			isa = PBXGroup;
 			children = (
-				4000735D1B97E838000D9674 /* Artwork+CoreDataProperties.h */,
-				4000735E1B97E838000D9674 /* Artwork.h */,
-				4000735F1B97E838000D9674 /* Artwork.m */,
+				408A8FFC1BAF485C00C26424 /* Artwork+CoreDataProperties.h */,
+				408A8FFD1BAF485C00C26424 /* Artwork.h */,
+				408A8FFE1BAF485C00C26424 /* Artwork.m */,
 				403D6ADC1B728EB6008D1C92 /* Palette_Data_Importer */,
 				403D6ADB1B728EB6008D1C92 /* Products */,
 			);
@@ -72,6 +75,8 @@
 		403D6ADC1B728EB6008D1C92 /* Palette_Data_Importer */ = {
 			isa = PBXGroup;
 			children = (
+				400E3F431BACE7E10005B918 /* NSObject+Blocks.m */,
+				400E3F421BACE7C10005B918 /* NSObject+Blocks.h */,
 				403D6ADD1B728EB6008D1C92 /* main.m */,
 				4044F45B1B728F8100CF253E /* Model.xcdatamodeld */,
 				4044F4611B7294C200CF253E /* DataStorage.h */,
@@ -140,7 +145,8 @@
 			files = (
 				403D6ADE1B728EB6008D1C92 /* main.m in Sources */,
 				4044F4631B7294C200CF253E /* DataStorage.m in Sources */,
-				400073601B97E838000D9674 /* Artwork.m in Sources */,
+				408A8FFF1BAF485C00C26424 /* Artwork.m in Sources */,
+				400E3F441BACE7E10005B918 /* NSObject+Blocks.m in Sources */,
 				4044F45D1B728F8100CF253E /* Model.xcdatamodeld in Sources */,
 				4044F4661B72BC1700CF253E /* NetworkImporter.m in Sources */,
 			);

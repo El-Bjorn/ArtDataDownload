@@ -1,0 +1,1104 @@
+{
+    "data": {
+        "accessInformation": {
+            "canAddMemos": true,
+            "canAddPhotoHistory": true,
+            "canCreateABO": true,
+            "canCreateAcquisition": false,
+            "canCreateApproval": true,
+            "canCreateGift": true,
+            "canCreateMovement": true,
+            "canCreateNFS": true,
+            "canCreateOffer": true,
+            "canCreateOutgoingConsignment": true,
+            "canCreateOutgoingLoan": true,
+            "canCreatePriceChange": true,
+            "canCreateRedFlag": true,
+            "canCreateReserve": true,
+            "canCreateReturn": true,
+            "canCreateSale": true,
+            "canCreateTransfer": true,
+            "canCreateUKImportStatus": true,
+            "canDeleteMemos": true,
+            "canDeletePhotoHistory": true,
+            "canPrintPhotoLabels": true,
+            "canUpdateAcquisitionComment": true,
+            "canUpdateArtwork": true,
+            "canUpdateCrate": true,
+            "canUpdateExistingFrame": true,
+            "canUpdateInscription": true,
+            "canUpdateMemos": true,
+            "canUpdatePhotoHistory": true,
+            "canUpdateProvenance": true,
+            "canUpdatetPGFrame": true
+        },
+        "acquisitionSummary": {
+            "abo": false,
+            "acquiringDealer": "MG",
+            "acquiringDealerId": 26,
+            "acquiringPaceEntity": "The Pace Gallery LLC",
+            "acquiringPaceEntityId": 2,
+            "acquisitionLblVal": null,
+            "acquisitionRegions": [
+                {
+                    "id": 9,
+                    "value": "Hong Kong"
+                }
+            ],
+            "agreementNotes": null,
+            "amoutDueArtist": null,
+            "artistAmount": null,
+            "artistRate": null,
+            "canViewCost": true,
+            "consignmentExpireDate": null,
+            "consignmentShareBasedOnAmount": null,
+            "costPWShare": null,
+            "currency": "USD",
+            "currentPrice": null,
+            "date": 1259643600000,
+            "delivered": true,
+            "dueBasedCurrentPrice": null,
+            "from": "DUBIN GLENN",
+            "id": 606,
+            "invoiceNumber": null,
+            "loanEndDate": null,
+            "loanExhibitionEndDate": null,
+            "loanExhibitionStartDate": null,
+            "loanNote": null,
+            "loanStartDate": null,
+            "method": "PURCHASE",
+            "netConsignment": null,
+            "nfs": false,
+            "note": null,
+            "noteAsia": null,
+            "noteLondon": null,
+            "orderNumber": 3,
+            "partners": [],
+            "percentCon": null,
+            "percentDueArtist": null,
+            "personalPropertyNote": null,
+            "prodCost": null,
+            "productionsCosts": [],
+            "purchaseCost": 800000.0,
+            "purchaseDate": null,
+            "purchaseMethod": "consigned 120109 and purchased 090710 per MG office. msa090710\r\nHistorical acq info:\r\n\r\nACQ changed from loan (entered on 12/1/09to consignment on 4/14/10, (DP).",
+            "purchaseMethodAsia": null,
+            "purchaseMethodLondon": null,
+            "purchaseOrder": null,
+            "purchasePgIsPrincipal": true,
+            "purchasePgShareAmount": 800000.0,
+            "purchasePgShareCurrency": null,
+            "purchaseReleaseToAccounting": false,
+            "purchaseTerms": null,
+            "purchaseTermsAsia": null,
+            "purchaseTermsLondon": null,
+            "pwShareProfitAmount": null,
+            "pwShareProfitPercent": null,
+            "redFlag": false,
+            "reimbursableAmount": null,
+            "reimbursableCost": null,
+            "reserved": false,
+            "saleId": null,
+            "shareRate": null,
+            "soldDate": null,
+            "soldTo": null,
+            "sourceAddressId": 1305,
+            "sourceContactId": 26073,
+            "sourceId": 6010,
+            "status": "ACTIVE",
+            "statusColor": "green",
+            "statusLabel": "Available"
+        },
+        "artworkSummary": {
+            "alternateNumbers": [],
+            "artistNames": "Picasso, Pablo",
+            "artists": [
+                {
+                    "id": 430,
+                    "label": "Picasso, Pablo",
+                    "paceArtist": true
+                }
+            ],
+            "artworkTypeDescription": null,
+            "classification": {
+                "id": 21,
+                "value": "WORK ON PAPER"
+            },
+            "confidential": false,
+            "creationDate": "1939",
+            "digitalMedia": [
+                {
+                    "id": 713460,
+                    "key": "f_dn8hQ8d8doGF8Ab6aPsULBuq-SSyJf8CkL8TIw0Xg4aIIhONbvaV3vPMW_QAPItyvtZRQQjF3GJLmzfFUwGg==",
+                    "type": "image/jpeg",
+                    "url": "JPEGs/PHOTO_ARCHIVES_JPEGs/PICASSO/04404_PICASSO.jpg"
+                },
+                {
+                    "id": 719307,
+                    "key": "XTmfynRqeLhQBPunV-GfirsepN_Z9idnK9eb8txdUNzhH2Q2wdX2rpxNB5Pay4pj",
+                    "type": "text/plain",
+                    "url": "JPEGs/Pdf_Archives/04404.pdf"
+                }
+            ],
+            "dimensionLines": [
+                {
+                    "dimensions": [
+                        {
+                            "id": 1909,
+                            "otherUnit": null,
+                            "unit": "IN",
+                            "value": "18-1/2"
+                        },
+                        {
+                            "id": 1910,
+                            "otherUnit": null,
+                            "unit": "IN",
+                            "value": "24-3/4"
+                        }
+                    ],
+                    "id": 793,
+                    "lineDisplayed": true,
+                    "linePattern": "18-1/2\" x 24-3/4\" (47 cm x 62.9 cm)",
+                    "type": "SIZE"
+                }
+            ],
+            "dimensions": "18-1/2\" x 24-3/4\" (47 cm x 62.9 cm)",
+            "disassembled": false,
+            "disassembledComments": null,
+            "fabricatorPublisherName": null,
+            "fabricatorPublisherType": 0,
+            "id": 571,
+            "inProduction": false,
+            "inProductionComments": null,
+            "lastUpdator": "BRamirez",
+            "legacyAsiaNumber": "A01793",
+            "legacyLondonNumber": "L00152",
+            "legacyNewYorkNumber": null,
+            "mediumId": 3937,
+            "mediumName": "pencil on paper",
+            "notMade": false,
+            "official": true,
+            "pgNumber": "04404",
+            "placeholder": false,
+            "tags": [],
+            "title": "Buste de Femme Couchee",
+            "yearFrom": 1939,
+            "yearTo": 1939
+        },
+        "attachments": [],
+        "comments": [
+            {
+                "acquisitionId": 606,
+                "acquisitionOrderNumber": 3,
+                "comment": "CoA on file in Reg Safe A (aw 2/9/12).\r\nThis work is on consignment to PGL for inventory only (HL 09/23/2011)\r\nCoA signed by Maya Picasso is on file in Safe B, received 4/20/2011; translation of CoA found in Reg Memo/Other/Msc. Hist. Info. (aw 4/20/11).\r\n1/28/11 to Transart per ABG, see CD/LA w/ questions (la)\r\nNew Frame costs from Lowry $25K inv # 056202. msa100110\r\nThe frame was removed from the work and the frame was returned to Dubin on 09/13/2010 (transported by HL to 57th Street on 09/09/10).\r\nThis work was formerly a consignment to Pace from Dubin 90/10 and then became a pace purchase for $800,000, per MG office (KB 9/7/10)\r\nCounter-signed consignment agreement on file in reg office - consignment period expires 10/15/2010, (DP 4/16/10).",
+                "editable": true
+            },
+            {
+                "acquisitionId": 605,
+                "acquisitionOrderNumber": 2,
+                "comment": null,
+                "editable": true
+            },
+            {
+                "acquisitionId": 604,
+                "acquisitionOrderNumber": 1,
+                "comment": "",
+                "editable": true
+            }
+        ],
+        "crate": {
+            "attachments": [],
+            "comment": "01/10/2011 RR: per Palette NY: All plywood crate @ 46.25 x 48 x 9.25\" - HB",
+            "depth": {
+                "id": null,
+                "otherUnit": null,
+                "unit": "IN",
+                "value": "-1"
+            },
+            "height": {
+                "id": null,
+                "otherUnit": null,
+                "unit": "IN",
+                "value": "-1"
+            },
+            "location": "",
+            "weight": {
+                "id": null,
+                "otherUnit": null,
+                "unit": "OZ",
+                "value": "-1"
+            },
+            "width": {
+                "id": null,
+                "otherUnit": null,
+                "unit": "IN",
+                "value": "-1"
+            }
+        },
+        "following": false,
+        "framingExisting": {
+            "attachments": [],
+            "comment": "NEW FRAME:\r\nLowy Frame with dims:  35 1/4\" x 41 1/4\" x 1 5/8\"\r\n\r\n(gm, 1/26/11)\r\n\r\n\r\n\r\n----------------------------------------------------------------------\r\n\r\nOLD FRAME (Dubin's Frame):\r\nThe frame was removed from the work and returned to Dubin (transported by HL to 57th Street on 09/09/10).\r\n\r\nframe: 31 3/4 x 37 3/4 x 1 1/2 inches",
+            "depth": {
+                "id": null,
+                "otherUnit": null,
+                "unit": "IN",
+                "value": "-1"
+            },
+            "height": {
+                "id": null,
+                "otherUnit": null,
+                "unit": "IN",
+                "value": "-1"
+            },
+            "location": "",
+            "width": {
+                "id": null,
+                "otherUnit": null,
+                "unit": "IN",
+                "value": "-1"
+            }
+        },
+        "framingPG": {},
+        "inTransit": false,
+        "inscription": {
+            "attachments": [],
+            "dateLocation": "",
+            "dated": false,
+            "otherInscription": "per ys, there are no inscriptions",
+            "otherInscriptionLocation": "",
+            "signatureLocation": "",
+            "signed": false
+        },
+        "insuranceCurrency": null,
+        "insuranceValue": 666032.38,
+        "isInRegion": true,
+        "location": {
+            "addressId": 29626,
+            "addressText": "Integrated Fine Arts Solutions(HKG) Ltd. Kerry TC Warehouse, Block A, 8th Floor, 3 Kin Chuen Road, Kwai Chung, N.T. - Hong Kong",
+            "city": "Hong Kong",
+            "country": "",
+            "entityId": 50832,
+            "entityName": "IFAS",
+            "state": "",
+            "street": "Integrated Fine Arts Solutions(HKG) Ltd. Kerry TC Warehouse, Block A, 8th Floor, 3 Kin Chuen Road, Kwai Chung, N.T.",
+            "subLocationName": null,
+            "zipPostalCode": ""
+        },
+        "locationDate": 1426521600000,
+        "memos": [
+            {
+                "attachments": [],
+                "comment": "CoA translation:\r\n\"I, Maya W Picasso, in my opinion I believe that I can certify that this pencil drawing on tracing paper made in 1939 representing a bust and a head leaning on two arms (most likely marie Therese), the tracing paper measuring 63.8 x 48.2 cm is a work from the hand of my father Pablo Picasso. Made in Paris 26 March 2011\"",
+                "type": "MISC_HIST_INFORMATION"
+            },
+            {
+                "attachments": [],
+                "comment": "total(readable) labels-- 3\r\n\r\n(old label-- hand written)\r\n1.  Picasso- 1040\r\n     Femme En Buste\r\n     18 1/2 x 24 3/4 Inches\r\n     Crayon Drawing\r\n     Collection Mary Callery\r\n     Prov. Galerie LLe de France Paris\r\n     Pace Gallery, NY\r\n     Zervos 1939 Supplement\r\n\r\n2. The Drawing Center\r\n    35 wooster Street\r\n    New York, NY 10013\r\n    212-219-2166\r\n    Drawn from Artists' Collections\r\n    April 24 - June 12, 1999\r\n    Pablo Picasso\r\n    \"Femme en Buste\", 1939\r\n    Crayon on paper\r\n    Collection of Julian Schnabel\r\n\r\n3.  (undiscernable label- partially torn)\r\n     packer\r\n     30 West Broadw\r\n     New york, NY 100\r\n     Tel: 212-431-4260\r\n     T No. 30\r\n     Piece No. 35\r\n\r\n4.  From M. Callery\r\n     THE BARN, R.F.D.2\r\n     HUNTINGTON, LONG ISLAND, N.Y.\r\n     TO  (hand written) Original Picasso Drawing\r\n     Given to Mary Callery as a lesson in Sculpture\r\n\r\n5. Appears to be and old Sidney Janis Gallery label (torn off)\r\n    (gallery name torn as well as address) 772-2288\r\n    ?????? Couchee 1939\r\n    34 x 63 cm\r\n    \r\n     ",
+                "type": "LABELS"
+            },
+            {
+                "attachments": [],
+                "comment": "Reinspected 2/9/15 (bn): N/C - below re-hinging and re-glazing has not yet been addressed. Approved by CD to go to HK Basel \r\n\r\nReinspected 11/26/14 (LT): Reinspected with Tony-- suggested a conservator re-hinge the work since the paper is so fragile. Also suggested to replace the glass and re-glaze with optimum plexi. Suggestions emailed to CD for approval. Otherwise good.\r\n\r\nReinspected 11/5/14 (LT): N/C; the paper is cockled along the bottom center margin- not new. Hinges are still visible, but appear stable. Otherwise good. \r\n\r\n10/23/14 Per PGL Reg. : The work was opened up by a paper conservator to remove the fillet/spacer that had come loose and was very close to the drawing itself. This was done to ensure it could travel safely. The staples hasn't been replaced. The conservator said the frame needs some attention- there is quite a bit of movement as the backing board and glass are perhaps a bit small for the frame itself. \r\n\r\nReinspected 9/11/14 (LT): The work is cockled overall. All 4 turning edges & outer margins have lifted. Hinges have slipped along the top center margin. Faint tear/stable along top center margin. Faint tears/stable also visible along outer right margin and along right bottom margin. Spoke to CD and she will speak to Verity about the slipped hinges (work is going to Frieze London), but this should not be visible when the work is installed. The frame: minor cracks with loss throughout. General wear & tear. Overall good/stable condition. Images included with full report on file in Reg. office.\r\n\r\nInspected 2/29/12 (EK): N/C.\r\n\r\n7/7/11 Re-inspected (JP): N/C; 5th Floor to remove adhesive accreted to upper left corner of glass\r\n\r\nReinspected 05/10/2011 (DP): Overall good condition - addition notes added.\r\n\r\nDescription of work.\r\nThis is a drawing estimated to be made of pencil on paper.   Inherent to support material, the paper has yellowed with age.  There appear to be previous hinges at top edge left, center and right as well as previously mended pin holes in upper left and  lower left corners and along right edge above center.  Faint creasing appears at lower left corner and lower right corner as well as in center of both left and right elbows of figure.  Slight cockle visible along bottom edge. \r\n\r\nCondition of work.\r\nThis drawing is in good and stable condition.\r\n\r\nRecommendation.\r\nDue to the nature of the material, it is recommended that this work on paper be exhibited in low light levels and not be displayed in direct sunlight.  Also due to the nature of the material, it is recommended that this work on paper should not be in an environment subject to fluctuations in temperature or humidity.\r\n \r\nKaia Black\r\nRegistrar Department\r\n12/15/09\r\n\r\nFull condition report on file in reg office, digital copy in reg folder (ka 4/27/11), Accessible via the following file path: \\\\Pw-fp3\\home\\_Registrar\\Condition Reports\\Picasso\\PICASSO_04404\\PICASSO_04404_FORMAL REPORT_12.15.09.doc\r\n\r\nClient friendly condition report accessible via the following file path: \\\\Pw-fp3\\home\\_Registrar\\Condition Reports\\Picasso\\PICASSO_04404\r\n\r\n04.08.11 Re-inspected (FG): no overall change- additional notes added for clarification; creases in paper not previously noted; small possible accretion in URQ; lint accumulation on splinter found along right turning edge of frame.\r\n\r\n1/26/11 re-inspected (GM): n/c to previous reports. \r\n\r\nThe frame was removed from the work and returned to Dubin (transported by HL to 57th Street on 09/09/10). The work was then reframed by Lowy. \r\n\r\n6/30/10 Re-inspected (HL): N/C-- additional notes added for clarification: tear in lower right corner, minor rippling along top edge; crease at edge of frame in bottom left corner; pinholes in lower left corner\r\n\r\n6/11/10 Re-inspected (KB): no apparent changes to the condition\r\n\r\n4/13/10 Re-inspected (KB): no change to artwork condition; work has been reframed since last inspection - silver/gold frame with burnished antioque wood; new silk/linen mat.\r\n\r\n11/24/09 Re-inspected upon return from Guttman Frames (KB): no change.\r\n\r\n11/24/09 Re-inspected at Dubin (KB): frame and mat are diffeernt, not the same as indicated on 11/06/09; now smudges on mat. Work has a slight cockle overall. \r\n\r\n11/06/09 Re-inspected (DP): no change to artwork; frame has been repaired - losses filled, now in very good condition. \r\n\r\n11/02/09 Reinspected (NR): no change to artwork.  Notes added for clarification.  Frame condition is fair - moderal losses around the perimeter. \r\n\r\n09/18/09 Inspected (KB): paper thin (tracing paper); 3 old hinges visible at top; major mend of tear between first two hinges at top. Series of mended pinholes at each corner (probably inherent from artist's working process). Old tears and creases. Brown accretions on glass - third quadrant area (should be cleaned). Foxing on bottom mat. Some areas of paper edges appear to have additional support - exposed Japanese paper. Frame: old losses (gilt) throughout. Many losses expose newly colored wood. Full condition report on file in reg office.\r\n\r\nper ys 9/16/09 (CC):  work is in stable, but fair condition.  Frame is chipped in numerous places due to age; inherent because frame is old; paper is yellowing, can see repaired paper hinges visible through paper; pitting in top right.",
+                "type": "COND_CONSERVATION"
+            }
+        ],
+        "movementHistory": [
+            {
+                "acquisitionId": 606,
+                "acquisitionOrderNumber": 3,
+                "actualArrivalDate": 1426521600000,
+                "actualShipDate": 1426521600000,
+                "destination": "IFAS",
+                "id": 237188,
+                "origin": "PACE HONG KONG",
+                "pending": false,
+                "shipOrderId": 95167,
+                "type": "SHIP"
+            },
+            {
+                "acquisitionId": 606,
+                "acquisitionOrderNumber": 3,
+                "actualArrivalDate": 1423717200000,
+                "actualShipDate": 1423717200000,
+                "destination": "PACE HONG KONG",
+                "id": 235638,
+                "origin": "PACE 57TH ST",
+                "pending": false,
+                "shipOrderId": 3468,
+                "type": "SHIP"
+            },
+            {
+                "acquisitionId": 606,
+                "acquisitionOrderNumber": 3,
+                "actualArrivalDate": 1416978000000,
+                "actualShipDate": 1416978000000,
+                "destination": "PACE 57TH ST",
+                "id": 232373,
+                "origin": "PACE 55TH ST",
+                "pending": false,
+                "shipOrderId": 15999,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 606,
+                "acquisitionOrderNumber": 3,
+                "actualArrivalDate": 1415077200000,
+                "actualShipDate": null,
+                "destination": "PACE 55TH ST",
+                "id": 230642,
+                "origin": "PACE LONDON",
+                "pending": false,
+                "shipOrderId": 3115,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 606,
+                "acquisitionOrderNumber": 3,
+                "actualArrivalDate": null,
+                "actualShipDate": 1414641600000,
+                "destination": "PACE NY",
+                "id": 230401,
+                "origin": "MARTINSPEED GLASSHOUSE",
+                "pending": false,
+                "shipOrderId": 92102,
+                "type": "SHIP"
+            },
+            {
+                "acquisitionId": 606,
+                "acquisitionOrderNumber": 3,
+                "actualArrivalDate": 1414123200000,
+                "actualShipDate": null,
+                "destination": "MARTINSPEED GLASSHOUSE",
+                "id": 229998,
+                "origin": "PACE LONDON 6BG",
+                "pending": false,
+                "shipOrderId": 91100,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 606,
+                "acquisitionOrderNumber": 3,
+                "actualArrivalDate": 1413777600000,
+                "actualShipDate": null,
+                "destination": "PACE LONDON 6BG",
+                "id": 229646,
+                "origin": "FRIEZE MASTERS 2014",
+                "pending": false,
+                "shipOrderId": 92071,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 606,
+                "acquisitionOrderNumber": 3,
+                "actualArrivalDate": null,
+                "actualShipDate": 1412913600000,
+                "destination": "FRIEZE MASTERS 2014",
+                "id": 229118,
+                "origin": "MARTINSPEED HAYES",
+                "pending": false,
+                "shipOrderId": 90537,
+                "type": "SHIP"
+            },
+            {
+                "acquisitionId": 606,
+                "acquisitionOrderNumber": 3,
+                "actualArrivalDate": 1412136000000,
+                "actualShipDate": null,
+                "destination": "MARTINSPEED HAYES",
+                "id": 228752,
+                "origin": "PACE NY",
+                "pending": false,
+                "shipOrderId": 92660,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 606,
+                "acquisitionOrderNumber": 3,
+                "actualArrivalDate": 1410926400000,
+                "actualShipDate": 1410926400000,
+                "destination": "FRIEZE MASTERS 2014",
+                "id": 227715,
+                "origin": "PACE 55TH ST",
+                "pending": false,
+                "shipOrderId": 72807,
+                "type": "SHIP"
+            },
+            {
+                "acquisitionId": 606,
+                "acquisitionOrderNumber": 3,
+                "actualArrivalDate": 1410321600000,
+                "actualShipDate": null,
+                "destination": "PACE 55TH ST",
+                "id": 227716,
+                "origin": "JAMES GOODMAN GALLERY",
+                "pending": false,
+                "shipOrderId": 87395,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 606,
+                "acquisitionOrderNumber": 3,
+                "actualArrivalDate": 1361509200000,
+                "actualShipDate": 1361509200000,
+                "destination": "JAMES GOODMAN GALLERY",
+                "id": 168299,
+                "origin": "PACE 57TH ST",
+                "pending": false,
+                "shipOrderId": 75223,
+                "type": "SHIP"
+            },
+            {
+                "acquisitionId": 606,
+                "acquisitionOrderNumber": 3,
+                "actualArrivalDate": 1330491600000,
+                "actualShipDate": 1330491600000,
+                "destination": "PACE 57TH ST",
+                "id": 168300,
+                "origin": "PACE LONDON",
+                "pending": false,
+                "shipOrderId": 43808,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 606,
+                "acquisitionOrderNumber": 3,
+                "actualArrivalDate": null,
+                "actualShipDate": 1329973200000,
+                "destination": "PACE NY",
+                "id": 209411,
+                "origin": "MARTINSPEED HAYES",
+                "pending": false,
+                "shipOrderId": 91034,
+                "type": "SHIP"
+            },
+            {
+                "acquisitionId": 606,
+                "acquisitionOrderNumber": 3,
+                "actualArrivalDate": 1317614400000,
+                "actualShipDate": null,
+                "destination": "MARTINSPEED HAYES",
+                "id": 209412,
+                "origin": "THE PACE GALLERY LLC",
+                "pending": false,
+                "shipOrderId": 91445,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 606,
+                "acquisitionOrderNumber": 3,
+                "actualArrivalDate": null,
+                "actualShipDate": 1316750400000,
+                "destination": "PACE LONDON",
+                "id": 168301,
+                "origin": "PACE 57TH ST",
+                "pending": false,
+                "shipOrderId": 5837,
+                "type": "SHIP"
+            },
+            {
+                "acquisitionId": 606,
+                "acquisitionOrderNumber": 3,
+                "actualArrivalDate": 1309924800000,
+                "actualShipDate": null,
+                "destination": "PACE 57TH ST",
+                "id": 168302,
+                "origin": "BASEL ART FAIR 2011",
+                "pending": false,
+                "shipOrderId": 53470,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 606,
+                "acquisitionOrderNumber": 3,
+                "actualArrivalDate": null,
+                "actualShipDate": 1305604800000,
+                "destination": "BASEL ART FAIR 2011",
+                "id": 168303,
+                "origin": "PACE 57TH ST",
+                "pending": false,
+                "shipOrderId": 17954,
+                "type": "SHIP"
+            },
+            {
+                "acquisitionId": 606,
+                "acquisitionOrderNumber": 3,
+                "actualArrivalDate": 1302148800000,
+                "actualShipDate": null,
+                "destination": "PACE 57TH ST",
+                "id": 168304,
+                "origin": "TRANSART INTERNATIO",
+                "pending": false,
+                "shipOrderId": 35276,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 606,
+                "acquisitionOrderNumber": 3,
+                "actualArrivalDate": null,
+                "actualShipDate": 1296190800000,
+                "destination": "TRANSART INTERNATIO",
+                "id": 168305,
+                "origin": "PACE 55TH ST",
+                "pending": false,
+                "shipOrderId": 61651,
+                "type": "SHIP"
+            },
+            {
+                "acquisitionId": 606,
+                "acquisitionOrderNumber": 3,
+                "actualArrivalDate": 1296018000000,
+                "actualShipDate": 1296018000000,
+                "destination": "PACE 55TH ST",
+                "id": 168306,
+                "origin": "PACE 57TH ST",
+                "pending": false,
+                "shipOrderId": 6117,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 606,
+                "acquisitionOrderNumber": 3,
+                "actualArrivalDate": 1285041600000,
+                "actualShipDate": null,
+                "destination": "PACE 57TH ST",
+                "id": 168307,
+                "origin": "LOWY FRAMES",
+                "pending": false,
+                "shipOrderId": 33717,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 606,
+                "acquisitionOrderNumber": 3,
+                "actualArrivalDate": null,
+                "actualShipDate": 1284955200000,
+                "destination": "LOWY FRAMES",
+                "id": 168308,
+                "origin": "PACE 55TH ST",
+                "pending": false,
+                "shipOrderId": 78603,
+                "type": "SHIP"
+            },
+            {
+                "acquisitionId": 606,
+                "acquisitionOrderNumber": 3,
+                "actualArrivalDate": 1277956800000,
+                "actualShipDate": 1277956800000,
+                "destination": "PACE 55TH ST",
+                "id": 168309,
+                "origin": "PACE 57TH ST",
+                "pending": false,
+                "shipOrderId": 41161,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 606,
+                "acquisitionOrderNumber": 3,
+                "actualArrivalDate": 1277956800000,
+                "actualShipDate": 1277956800000,
+                "destination": "PACE 57TH ST",
+                "id": 168310,
+                "origin": "PACE 55TH ST",
+                "pending": false,
+                "shipOrderId": 39948,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 606,
+                "acquisitionOrderNumber": 3,
+                "actualArrivalDate": 1277870400000,
+                "actualShipDate": null,
+                "destination": "PACE 55TH ST",
+                "id": 168311,
+                "origin": "BASEL ART FAIR 2010",
+                "pending": false,
+                "shipOrderId": 47161,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 606,
+                "acquisitionOrderNumber": 3,
+                "actualArrivalDate": null,
+                "actualShipDate": 1276228800000,
+                "destination": "BASEL ART FAIR 2010",
+                "id": 168312,
+                "origin": "PACE 55TH ST",
+                "pending": false,
+                "shipOrderId": 77955,
+                "type": "SHIP"
+            },
+            {
+                "acquisitionId": 606,
+                "acquisitionOrderNumber": 3,
+                "actualArrivalDate": 1276228800000,
+                "actualShipDate": 1276228800000,
+                "destination": "PACE 55TH ST",
+                "id": 168313,
+                "origin": "PACE 57TH ST",
+                "pending": false,
+                "shipOrderId": 82901,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 606,
+                "acquisitionOrderNumber": 3,
+                "actualArrivalDate": 1271217600000,
+                "actualShipDate": null,
+                "destination": "PACE 57TH ST",
+                "id": 168314,
+                "origin": "DUBIN GLENN",
+                "pending": false,
+                "shipOrderId": 53071,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 606,
+                "acquisitionOrderNumber": 3,
+                "actualArrivalDate": 1259686800000,
+                "actualShipDate": 1259686800000,
+                "destination": "DUBIN GLENN",
+                "id": 168315,
+                "origin": null,
+                "pending": false,
+                "shipOrderId": null,
+                "type": "ORIGIN"
+            },
+            {
+                "acquisitionId": 605,
+                "acquisitionOrderNumber": 2,
+                "actualArrivalDate": null,
+                "actualShipDate": 1257483600000,
+                "destination": "DUBIN GLENN",
+                "id": 166782,
+                "origin": "PACE 57TH ST",
+                "pending": false,
+                "shipOrderId": 10636,
+                "type": "SHIP"
+            },
+            {
+                "acquisitionId": 605,
+                "acquisitionOrderNumber": 2,
+                "actualArrivalDate": 1257397200000,
+                "actualShipDate": null,
+                "destination": "PACE 57TH ST",
+                "id": 166783,
+                "origin": "LOWY FRAMES",
+                "pending": false,
+                "shipOrderId": 30976,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 605,
+                "acquisitionOrderNumber": 2,
+                "actualArrivalDate": null,
+                "actualShipDate": 1257138000000,
+                "destination": "LOWY FRAMES",
+                "id": 166784,
+                "origin": "PACE 57TH ST",
+                "pending": false,
+                "shipOrderId": 81114,
+                "type": "SHIP"
+            },
+            {
+                "acquisitionId": 605,
+                "acquisitionOrderNumber": 2,
+                "actualArrivalDate": 1253246400000,
+                "actualShipDate": null,
+                "destination": "PACE 57TH ST",
+                "id": 166785,
+                "origin": "SCHNABEL JULIAN",
+                "pending": false,
+                "shipOrderId": 79828,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 605,
+                "acquisitionOrderNumber": 2,
+                "actualArrivalDate": 1253203200000,
+                "actualShipDate": 1253203200000,
+                "destination": "SCHNABEL JULIAN",
+                "id": 166786,
+                "origin": null,
+                "pending": false,
+                "shipOrderId": null,
+                "type": "ORIGIN"
+            }
+        ],
+        "pgNumberNext": "04413",
+        "pgNumberPrevious": "04403",
+        "photos": [
+            {
+                "comment": "",
+                "date": 1277956800000,
+                "exhibition": null,
+                "format": "digital",
+                "id": 4001,
+                "photographer": {
+                    "id": 25512,
+                    "name": "G.R. Christmas",
+                    "resaleCertificate": null,
+                    "type": null,
+                    "website": null
+                },
+                "photographerAddress": {
+                    "city": null,
+                    "country": null,
+                    "entityRelationships": null,
+                    "id": null,
+                    "state": null,
+                    "street": null,
+                    "text": null,
+                    "zipPostalCode": null
+                },
+                "photographerContact": {
+                    "active": false,
+                    "comment": null,
+                    "company": null,
+                    "emailAddresses": null,
+                    "entityRelationships": null,
+                    "firstName": null,
+                    "fullName": null,
+                    "id": null,
+                    "jobDescription": null,
+                    "lastName": null,
+                    "middleName": null,
+                    "salutation": null
+                },
+                "scanned": "",
+                "source": "",
+                "storedLocation": "POD",
+                "viewNumber": ""
+            },
+            {
+                "comment": "",
+                "date": 1277956800000,
+                "exhibition": null,
+                "format": "4x5 tran",
+                "id": 4002,
+                "photographer": {
+                    "id": 25512,
+                    "name": "G.R. Christmas",
+                    "resaleCertificate": null,
+                    "type": null,
+                    "website": null
+                },
+                "photographerAddress": {
+                    "city": null,
+                    "country": null,
+                    "entityRelationships": null,
+                    "id": null,
+                    "state": null,
+                    "street": null,
+                    "text": null,
+                    "zipPostalCode": null
+                },
+                "photographerContact": {
+                    "active": false,
+                    "comment": null,
+                    "company": null,
+                    "emailAddresses": null,
+                    "entityRelationships": null,
+                    "firstName": null,
+                    "fullName": null,
+                    "id": null,
+                    "jobDescription": null,
+                    "lastName": null,
+                    "middleName": null,
+                    "salutation": null
+                },
+                "scanned": "",
+                "source": "",
+                "storedLocation": "",
+                "viewNumber": ""
+            },
+            {
+                "comment": "reshot with Frame included",
+                "date": 1277956800000,
+                "exhibition": null,
+                "format": "digital",
+                "id": 4003,
+                "photographer": {
+                    "id": 25512,
+                    "name": "G.R. Christmas",
+                    "resaleCertificate": null,
+                    "type": null,
+                    "website": null
+                },
+                "photographerAddress": {
+                    "city": null,
+                    "country": null,
+                    "entityRelationships": null,
+                    "id": null,
+                    "state": null,
+                    "street": null,
+                    "text": null,
+                    "zipPostalCode": null
+                },
+                "photographerContact": {
+                    "active": false,
+                    "comment": null,
+                    "company": null,
+                    "emailAddresses": null,
+                    "entityRelationships": null,
+                    "firstName": null,
+                    "fullName": null,
+                    "id": null,
+                    "jobDescription": null,
+                    "lastName": null,
+                    "middleName": null,
+                    "salutation": null
+                },
+                "scanned": "",
+                "source": "",
+                "storedLocation": "",
+                "viewNumber": "ALT"
+            },
+            {
+                "comment": "",
+                "date": 1277956800000,
+                "exhibition": null,
+                "format": "digital",
+                "id": 46476,
+                "photographer": {
+                    "id": 25512,
+                    "name": "G.R. Christmas",
+                    "resaleCertificate": null,
+                    "type": null,
+                    "website": null
+                },
+                "photographerAddress": {
+                    "city": null,
+                    "country": null,
+                    "entityRelationships": null,
+                    "id": null,
+                    "state": null,
+                    "street": null,
+                    "text": null,
+                    "zipPostalCode": null
+                },
+                "photographerContact": {
+                    "active": false,
+                    "comment": null,
+                    "company": null,
+                    "emailAddresses": null,
+                    "entityRelationships": null,
+                    "firstName": null,
+                    "fullName": null,
+                    "id": null,
+                    "jobDescription": null,
+                    "lastName": null,
+                    "middleName": null,
+                    "salutation": null
+                },
+                "scanned": "",
+                "source": "Pace NY",
+                "storedLocation": "POD",
+                "viewNumber": ""
+            },
+            {
+                "comment": "",
+                "date": 1277956800000,
+                "exhibition": null,
+                "format": "4x5 tran",
+                "id": 46477,
+                "photographer": {
+                    "id": 25512,
+                    "name": "G.R. Christmas",
+                    "resaleCertificate": null,
+                    "type": null,
+                    "website": null
+                },
+                "photographerAddress": {
+                    "city": null,
+                    "country": null,
+                    "entityRelationships": null,
+                    "id": null,
+                    "state": null,
+                    "street": null,
+                    "text": null,
+                    "zipPostalCode": null
+                },
+                "photographerContact": {
+                    "active": false,
+                    "comment": null,
+                    "company": null,
+                    "emailAddresses": null,
+                    "entityRelationships": null,
+                    "firstName": null,
+                    "fullName": null,
+                    "id": null,
+                    "jobDescription": null,
+                    "lastName": null,
+                    "middleName": null,
+                    "salutation": null
+                },
+                "scanned": "",
+                "source": "Pace NY",
+                "storedLocation": "",
+                "viewNumber": ""
+            },
+            {
+                "comment": "Historical information from Pace NY: reshot with Frame included. ",
+                "date": 1277956800000,
+                "exhibition": null,
+                "format": "digital",
+                "id": 46478,
+                "photographer": {
+                    "id": 25512,
+                    "name": "G.R. Christmas",
+                    "resaleCertificate": null,
+                    "type": null,
+                    "website": null
+                },
+                "photographerAddress": {
+                    "city": null,
+                    "country": null,
+                    "entityRelationships": null,
+                    "id": null,
+                    "state": null,
+                    "street": null,
+                    "text": null,
+                    "zipPostalCode": null
+                },
+                "photographerContact": {
+                    "active": false,
+                    "comment": null,
+                    "company": null,
+                    "emailAddresses": null,
+                    "entityRelationships": null,
+                    "firstName": null,
+                    "fullName": null,
+                    "id": null,
+                    "jobDescription": null,
+                    "lastName": null,
+                    "middleName": null,
+                    "salutation": null
+                },
+                "scanned": "",
+                "source": "Pace NY",
+                "storedLocation": "",
+                "viewNumber": ""
+            }
+        ],
+        "price": {
+            "currency": "USD",
+            "effectiveDate": 1318348132897,
+            "paceContact": "MG",
+            "price": 1100000.0
+        },
+        "priceHistory": [
+            {
+                "acquisitionId": 606,
+                "acquisitionOrderNumber": 3,
+                "comment": "",
+                "currency": "USD",
+                "effectiveDate": 1318348132897,
+                "id": 49646,
+                "paceContact": {
+                    "id": 26,
+                    "value": "MG"
+                },
+                "price": 1100000.0
+            },
+            {
+                "acquisitionId": 606,
+                "acquisitionOrderNumber": 3,
+                "comment": "As per MG, 29/09/2011, PRG",
+                "currency": "USD",
+                "effectiveDate": 1317316156890,
+                "id": 58457,
+                "paceContact": {
+                    "id": 19,
+                    "value": "PRG"
+                },
+                "price": 1100000.0
+            },
+            {
+                "acquisitionId": 606,
+                "acquisitionOrderNumber": 3,
+                "comment": "",
+                "currency": "USD",
+                "effectiveDate": 1307542690337,
+                "id": 49645,
+                "paceContact": {
+                    "id": 26,
+                    "value": "MG"
+                },
+                "price": 1500000.0
+            },
+            {
+                "acquisitionId": 606,
+                "acquisitionOrderNumber": 3,
+                "comment": "",
+                "currency": "USD",
+                "effectiveDate": 1273079922373,
+                "id": 49644,
+                "paceContact": {
+                    "id": 26,
+                    "value": "MG"
+                },
+                "price": 1200000.0
+            },
+            {
+                "acquisitionId": 606,
+                "acquisitionOrderNumber": 3,
+                "comment": "",
+                "currency": "USD",
+                "effectiveDate": 1273075686103,
+                "id": 49643,
+                "paceContact": {
+                    "id": 26,
+                    "value": "MG"
+                },
+                "price": 1500000.0
+            },
+            {
+                "acquisitionId": 606,
+                "acquisitionOrderNumber": 3,
+                "comment": "",
+                "currency": "USD",
+                "effectiveDate": 1271267656273,
+                "id": 49642,
+                "paceContact": {
+                    "id": 26,
+                    "value": "MG"
+                },
+                "price": 1000000.0
+            },
+            {
+                "acquisitionId": 605,
+                "acquisitionOrderNumber": 2,
+                "comment": "",
+                "currency": "USD",
+                "effectiveDate": 1253892912253,
+                "id": 49306,
+                "paceContact": {
+                    "id": 26,
+                    "value": "MG"
+                },
+                "price": 1000000.0
+            },
+            {
+                "acquisitionId": 604,
+                "acquisitionOrderNumber": 1,
+                "comment": "effective 10/01/80",
+                "currency": "USD",
+                "effectiveDate": 339220800000,
+                "id": 942,
+                "paceContact": {
+                    "id": 57,
+                    "value": "NONE"
+                },
+                "price": 35000.0
+            }
+        ],
+        "provenanceComment": "null--------------------------------------------------------------------------------This work is not in Zervos or the noexistant supplement to 1939. \r\n\r\nRe: Zervos, Christian. Pablo Picasso. Paris: Cahier d?art, [c.1942?1978]\r\n \r\nThere is not a 1939 supplement. I believe the note on the reg. card to be inaccurate [now]. \r\n \r\nComplete in 33 volumes in 34 parts (vol. 2 was issued in two parts; pt. 1 oeuvres de 1906 - 1912 ? vol. 2, pt. 2 oeuvres de 1912 - 1917).\r\n \r\nThere are seven supplements:\r\n \r\n1) v. 6 Suplement aux vol. 1 ? 5.\r\n2) v. 21 Suplement aux annees 1892-1902\r\n3) v. 22 Suplement aux annees 1903-1906\r\n4) v. 26 Suplement aux annees 1907-1909\r\n5) v. 28 Suplement aux annees 1910-1913\r\n6) v. 29 Suplement aux annees 1914-1919\r\n7) v. 30 Suplement aux annees1920-1922\r\n----------------------------------------------------------\r\n\r\n------------------------------------------------------\r\n\r\n04-15-2009 Heather Palmer\r\n\r\nRequested additional history from Zinta Schnore.\r\n\r\n------------------------------------------------------\r\nLast Updated by KFernandez on 09-29-2009 \r\n-----------------------------------------------------\r\n09-29-2009 Heather Palmer\r\n\r\nRequested history from Joe Baptista.\r\n\r\n---------------------------------------------------\r\n\r\nLast Updated by JMason on 09-29-2009 \r\n-------------------------------------------------------\r\n09-23-2009 Carol Wiener\r\n\r\ncopy of inventory card in paper file.\r\n\r\nlabels on the back (via email from Kaia)\r\nHmmm, strange. Here are the labels on the back?\r\ntotal (readable) labels-- 3\r\n\r\n(old label-- hand written)\r\n1.  Picasso- 1040\r\n     Femme En Buste\r\n     18 1/2 x 24 3/4 Inches\r\n     Crayon Drawing\r\n     Collection Mary Callery\r\n     Prov. Galerie LLe de France Paris\r\n     Pace Gallery, NY\r\n     Zervos 1939 Supplement\r\n\r\n2. The Drawing Center\r\n    35 wooster Street\r\n    New York, NY 10013\r\n    212-219-2166\r\n    Drawn from Artists' Collections\r\n    April 24 - June 12, 1999\r\n    Pablo Picasso\r\n    &quot;Femme en Buste&quot;, 1939\r\n    Crayon on paper\r\n    Collection of Julian Schnabel\r\n\r\n3.  (indiscernable label- partially torn)\r\n     packer\r\n     30 West Broadw\r\n     New York, NY 100\r\n     Tel: 212-431-4260\r\n     T No. 30\r\n     Piece No. 35\r\n\r\n4.  From M. Callery\r\n     THE BARN, R.F.D.2\r\n     HUNTINGTON, LONG ISLAND, N.Y.\r\n     TO  (hand written) Original Picasso Drawing\r\n     Given to Mary Callery as a lesson in Sculpture\r\n\r\n5. Appears to be and old Sidney Janis Gallery label (torn off)\r\n    (gallery name torn as well as address) 772-2288\r\n    ?????? Couchee 1939\r\n    34 x 63 cm\r\n----------------------------------------------------------\r\n09-18-2009 Heather Palmer\r\n\r\nAs per email from Joe Baptista:\r\n\r\nProvenance, I will advise.",
+        "tags": [],
+        "ukImportStatus": null,
+        "ukImportStatusEndDate": null,
+        "ukImportStatusHistory": [],
+        "ukImportStatusStartDate": null
+    },
+    "version": "1716"
+}

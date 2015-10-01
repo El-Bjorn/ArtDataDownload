@@ -9,6 +9,8 @@
 #import "NetworkImporter.h"
 #import "Artwork.h"
 #import "DataStorage.h"
+#import "NSObject+Blocks.h"
+
 
 extern DataStorage *ds;
 extern dispatch_semaphore_t done_sema;
@@ -42,39 +44,50 @@ int num_artworks = 0;
         //NSHTTPCookieStorage *cookieJar = [NSHTTPCookieStorage sharedHTTPCookieStorage];
         //NSLog(@"cookies: %@",cookieJar.cookies);
         
-        
+#define FRAME_SIZE 100
+       
         //[self downloadImageForPgid:@"01648" withWidth:50];
-        int num_frames = 408;
+        int num_frames = 510;
+        //int num_frames = 5;
         int i;
         for (i=0; i< num_frames ; i++ ) {
-            [self artArrayForIndex:i withCompBlock:^(NSArray *artDicts, NSError *err) {
-                NSLog(@"got artwork array: %@",artDicts);
-                for (NSDictionary *d in artDicts) {
-                    Artwork *a = [self createArtworkFromArtDict:d];
-                    if (a != nil) {
-                        NSLog(@"created artwork: %@",a);
+            //[self performBlock:^{
+                printf("making call for frame: %d\n",i);
+                [self artArrayForIndex:i withCompBlock:^(NSArray *artDicts, NSError *err) {
+                    NSLog(@"Frame: %d got artwork array of size: %ld",i,artDicts.count);
+                    for (NSDictionary *d in artDicts) {
+                        Artwork *a = [self createArtworkFromArtDict:d];
+                        if (a != nil) {
+                            //NSLog(@"created artwork: %@",a);
+                        }
+                        //printf("number of artworks imported: %d\n",++num_artworks);
+                        num_artworks++;
+                        if (num_artworks == num_frames*FRAME_SIZE) {
+                            NSLog(@"done importing");
+                            dispatch_semaphore_signal(done_sema);
+                        }
                     }
-                    printf("number of artworks imported: %d\n",++num_artworks);
-                    if (num_artworks == num_frames*10) {
-                        NSLog(@"done importing");
-                        dispatch_semaphore_signal(done_sema);
-                        
-                    }
+                }];
 
-                }
-                //NSLog(@"artDicts = %@",artDicts);
-            }];
-
+            //} afterDelay:5];
+            
+            NSLog(@"sleeping....");
+            sleep(1);
         }
-        
     }];
     [task resume];
 }
 
+#define ACQ_URL @"http://palette-dev.pacegallery.com/palette/search/acquisitions?count="
 
 // retrieves array of 10 art piece dictionaries
 -(void) artArrayForIndex:(int)index withCompBlock:(void (^)(NSArray *artDict, NSError *err))compBlk {
-    NSURL *url = [NSURL URLWithString:@"http://palette-dev.pacegallery.com/palette/search/filter/ajax/get"];
+    //NSURL *url = [NSURL URLWithString:@"http://palette-dev.pacegallery.com/palette/search/filter/ajax/get"];
+    NSString *urlstr = [NSString stringWithFormat:@"%@%d",ACQ_URL,FRAME_SIZE];
+    //NSURL *url = [NSURL URLWithString:@"http://palette-dev.pacegallery.com/palette/search/acquisitions?count=100"];
+    NSURL *url = [NSURL URLWithString:urlstr];
+    //NSLog(@"url= %@",url);
+
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     NSString *postString = [NSString stringWithFormat:@"index=%d&sortType=SORT_TYPE_RELEVANCY_DESC",index];
     [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
@@ -82,6 +95,10 @@ int num_artworks = 0;
     
     NSURLSessionTask *task = [self.urlsession dataTaskWithRequest:request
                                                 completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                    if (error){
+                        NSLog(@"error = %@",error);
+                    }
+                    NSLog(@"response= %@",response);
                     NSError *err = nil;
                     NSMutableArray *pgidList = [[NSMutableArray alloc] init];
                     NSDictionary *ajaxResults = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&err];
@@ -102,11 +119,11 @@ int num_artworks = 0;
 -(Artwork*) createArtworkFromArtDict:(NSDictionary*)dict {
     // check if we gots an image
     NSString *acquisStatus = dict[@"acquisitionStatus"];
-    NSLog(@"acquisStatus= %@ -----------------------------------------",acquisStatus);
+    //NSLog(@"acquisStatus= %@ -----------------------------------------",acquisStatus);
 
     if ([dict[WIDTH_KEY] isKindOfClass:[NSNull class]]) {
-        NSLog(@"no image, don't add it");
-        return nil;
+        NSLog(@"no image");
+        //return nil;
     }
     NSArray *flagArray = @[ @{ @"flag":@"acquisitionOnConsignmentFlag", @"label":@"Consignment"},
                             @{ @"flag":@"acquisitionOnLoanFlag", @"label":@"Loan"},
@@ -116,12 +133,25 @@ int num_artworks = 0;
                             @{ @"flag":@"acquisitionNfsFlag", @"label":@"NFS"},
                             @{ @"flag":@"acquisitionRedFlag", @"label":@"Red Flag"} ];
     
-    NSLog(@"creating artwork....");
+    //NSLog(@"creating artwork....");
+    // check if we have it already
+    NSFetchRequest *req = [[NSFetchRequest alloc] initWithEntityName:@"Artwork"];
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"paceID=%@",dict[@"artworkPgNumber"]];
+    req.predicate = pred;
+    NSError *err = nil;
+    NSArray *results = [ds.context executeFetchRequest:req error:&err];
+    if (results.count > 0){
+        NSLog(@"got pgid: %@ already",dict[@"artworkPgNumber"]);
+        return nil;
+    }
+    
+    
     Artwork *newArt = [NSEntityDescription insertNewObjectForEntityForName:@"Artwork" inManagedObjectContext:ds.context];
     newArt.artworkID = dict[@"artworkId"];
     newArt.paceID = dict[@"artworkPgNumber"];
     newArt.artistNames = dict[@"artistName"];
     newArt.title = dict[@"artworkTitle"];
+    newArt.searchResultOrder = @(-1);
     if (dict[@"artworkDate"] != [NSNull null]) {
         newArt.creationDate =  dict[@"artworkDate"];
     }
@@ -199,10 +229,14 @@ int num_artworks = 0;
     
     
     // artwork image size
-    if (![dict[WIDTH_KEY] isKindOfClass:[NSNull class]]) {
+    if ([dict[WIDTH_KEY] isKindOfClass:[NSNull class]] || dict[WIDTH_KEY]==nil) {
+        newArt.artworkImageWidth = @0;
+    } else {
         newArt.artworkImageWidth = dict[WIDTH_KEY];
     }
-    if (![dict[HEIGHT_KEY] isKindOfClass:[NSNull class]]) {
+    if ([dict[HEIGHT_KEY] isKindOfClass:[NSNull class]] || dict[HEIGHT_KEY]==nil) {
+        newArt.artworkImageHeight = @0;
+    } else {
         newArt.artworkImageHeight = dict[HEIGHT_KEY];
     }
     NSError *savErr = nil;
@@ -218,7 +252,7 @@ int num_artworks = 0;
 {
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://palette-dev.pacegallery.com/palette/artwork/infofragment?pgNumber=%d",pgid]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    NSLog(@"url = %@",url);
+    //NSLog(@"url = %@",url);
     NSURLSessionTask *task = [self.urlsession dataTaskWithRequest:request
                                                 completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                         //NSLog(@"response= %@, err= %@",response,error);

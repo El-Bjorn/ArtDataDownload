@@ -1,0 +1,817 @@
+{
+    "data": {
+        "accessInformation": {
+            "canAddMemos": true,
+            "canAddPhotoHistory": true,
+            "canCreateABO": true,
+            "canCreateAcquisition": false,
+            "canCreateApproval": true,
+            "canCreateGift": true,
+            "canCreateMovement": true,
+            "canCreateNFS": true,
+            "canCreateOffer": true,
+            "canCreateOutgoingConsignment": true,
+            "canCreateOutgoingLoan": true,
+            "canCreatePriceChange": true,
+            "canCreateRedFlag": true,
+            "canCreateReserve": true,
+            "canCreateReturn": true,
+            "canCreateSale": true,
+            "canCreateTransfer": true,
+            "canCreateUKImportStatus": true,
+            "canDeleteMemos": true,
+            "canDeletePhotoHistory": true,
+            "canPrintPhotoLabels": true,
+            "canUpdateAcquisitionComment": true,
+            "canUpdateArtwork": true,
+            "canUpdateCrate": true,
+            "canUpdateExistingFrame": true,
+            "canUpdateInscription": true,
+            "canUpdateMemos": true,
+            "canUpdatePhotoHistory": true,
+            "canUpdateProvenance": true,
+            "canUpdatetPGFrame": true
+        },
+        "acquisitionSummary": {
+            "abo": false,
+            "acquiringDealer": "NONE",
+            "acquiringDealerId": 57,
+            "acquiringPaceEntity": "The Pace Gallery LLC",
+            "acquiringPaceEntityId": 2,
+            "acquisitionLblVal": null,
+            "acquisitionRegions": [
+                {
+                    "id": 130,
+                    "value": "New York"
+                }
+            ],
+            "agreementNotes": null,
+            "amoutDueArtist": null,
+            "artistAmount": null,
+            "artistRate": null,
+            "canViewCost": true,
+            "consignmentExpireDate": null,
+            "consignmentShareBasedOnAmount": null,
+            "costPWShare": null,
+            "currency": "USD",
+            "currentPrice": null,
+            "date": 1093924800000,
+            "delivered": true,
+            "dueBasedCurrentPrice": null,
+            "from": "SCULPTOTEK INC",
+            "id": 309,
+            "invoiceNumber": null,
+            "loanEndDate": null,
+            "loanExhibitionEndDate": null,
+            "loanExhibitionStartDate": null,
+            "loanNote": null,
+            "loanStartDate": null,
+            "method": "PURCHASE",
+            "netConsignment": null,
+            "nfs": false,
+            "note": null,
+            "noteAsia": null,
+            "noteLondon": null,
+            "orderNumber": 1,
+            "partners": [],
+            "percentCon": null,
+            "percentDueArtist": null,
+            "personalPropertyNote": null,
+            "prodCost": null,
+            "productionsCosts": [],
+            "purchaseCost": 33996.0,
+            "purchaseDate": null,
+            "purchaseMethod": "Originally acquired from artist as purchase 9/1/86 for $45,328.00.\r\n\r\n",
+            "purchaseMethodAsia": null,
+            "purchaseMethodLondon": null,
+            "purchaseOrder": null,
+            "purchasePgIsPrincipal": true,
+            "purchasePgShareAmount": 33996.0,
+            "purchasePgShareCurrency": null,
+            "purchaseReleaseToAccounting": false,
+            "purchaseTerms": "As of 8/31/04: cost write off to $33,996.00. Selling price revised to same. See price history for previous selling prices (ss)\r\n",
+            "purchaseTermsAsia": null,
+            "purchaseTermsLondon": null,
+            "pwShareProfitAmount": null,
+            "pwShareProfitPercent": null,
+            "redFlag": false,
+            "reimbursableAmount": null,
+            "reimbursableCost": null,
+            "reserved": false,
+            "saleId": null,
+            "shareRate": null,
+            "soldDate": null,
+            "soldTo": null,
+            "sourceAddressId": 25400,
+            "sourceContactId": 10315,
+            "sourceId": 20442,
+            "status": "ACTIVE",
+            "statusColor": "green",
+            "statusLabel": "Available"
+        },
+        "artworkSummary": {
+            "alternateNumbers": [],
+            "artistNames": "Nevelson, Louise",
+            "artists": [
+                {
+                    "id": 391,
+                    "label": "Nevelson, Louise",
+                    "paceArtist": true
+                }
+            ],
+            "artworkTypeDescription": null,
+            "classification": {
+                "id": 16,
+                "value": "SCULPTURE"
+            },
+            "confidential": false,
+            "creationDate": "1976-78",
+            "digitalMedia": [
+                {
+                    "id": 600790,
+                    "key": "S6e3YUWg0nYNdg4Oy7Rt8kLBuq-SSyJf8CkL8TIw0XhR2x4SOJ7Xnaa-tIODNhAlH3BduIP6ukQfkcrX5qlX8g==",
+                    "type": "image/jpeg",
+                    "url": "JPEGs/PHOTO_ARCHIVES_JPEGs/NEVELSON/01653_NEVELSON.jpg"
+                },
+                {
+                    "id": 719262,
+                    "key": "0iEH6PFUlJ23T6Li-eSfTrTvTVV9CDjvnJWpjnx3pYzhH2Q2wdX2rpxNB5Pay4pj",
+                    "type": "text/plain",
+                    "url": "JPEGs/Pdf_Archives/01653.pdf"
+                }
+            ],
+            "dimensionLines": [
+                {
+                    "dimensions": [
+                        {
+                            "id": 1265,
+                            "otherUnit": null,
+                            "unit": "IN",
+                            "value": "65-3/4"
+                        },
+                        {
+                            "id": 1266,
+                            "otherUnit": null,
+                            "unit": "IN",
+                            "value": "45-1/2"
+                        },
+                        {
+                            "id": 1267,
+                            "otherUnit": null,
+                            "unit": "IN",
+                            "value": "7-1/2"
+                        }
+                    ],
+                    "id": 512,
+                    "lineDisplayed": true,
+                    "linePattern": "65-3/4\" x 45-1/2\" x 7-1/2\" (167 cm x 115.6 cm x 19 cm)",
+                    "type": "SIZE"
+                }
+            ],
+            "dimensions": "65-3/4\" x 45-1/2\" x 7-1/2\" (167 cm x 115.6 cm x 19 cm)",
+            "disassembled": false,
+            "disassembledComments": null,
+            "fabricatorPublisherName": null,
+            "fabricatorPublisherType": 0,
+            "id": 152,
+            "inProduction": false,
+            "inProductionComments": null,
+            "lastUpdator": "p2[eklug]",
+            "legacyAsiaNumber": null,
+            "legacyLondonNumber": null,
+            "legacyNewYorkNumber": null,
+            "mediumId": 514,
+            "mediumName": "wood painted black",
+            "notMade": false,
+            "official": true,
+            "pgNumber": "01653",
+            "placeholder": false,
+            "tags": [
+                "wall relief"
+            ],
+            "title": "Untitled",
+            "yearFrom": 1976,
+            "yearTo": 1978
+        },
+        "attachments": [
+            {
+                "attachmentDate": 1415242209000,
+                "comment": null,
+                "description": "Provenance document",
+                "id": 324,
+                "lastUpdated": 1415242209000,
+                "lastUpdator": "batch.user"
+            },
+            {
+                "attachmentDate": 1415242213000,
+                "comment": null,
+                "description": "Provenance document",
+                "id": 325,
+                "lastUpdated": 1415242213000,
+                "lastUpdator": "batch.user"
+            }
+        ],
+        "comments": [
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "comment": "Please note, per ABG/JB, this work may be installed horizontally OR vertically (EK 2/18/09).",
+                "editable": true
+            }
+        ],
+        "crate": {
+            "attachments": [],
+            "comment": "EU Crate:   59-1/2 x 80 x 19-3/4\"",
+            "depth": {
+                "id": null,
+                "otherUnit": null,
+                "unit": "IN",
+                "value": "-1"
+            },
+            "height": {
+                "id": null,
+                "otherUnit": null,
+                "unit": "IN",
+                "value": "-1"
+            },
+            "location": "",
+            "weight": {
+                "id": null,
+                "otherUnit": null,
+                "unit": "OZ",
+                "value": "-1"
+            },
+            "width": {
+                "id": null,
+                "otherUnit": null,
+                "unit": "IN",
+                "value": "-1"
+            }
+        },
+        "following": false,
+        "framingExisting": {},
+        "framingPG": {},
+        "inTransit": false,
+        "inscription": {},
+        "insuranceCurrency": "USD",
+        "insuranceValue": 212500.0,
+        "isInRegion": true,
+        "location": {
+            "addressId": 7268,
+            "addressText": "2025 East Linden Avenue - Linden, NJ, 07036, United States",
+            "city": "Linden",
+            "country": "United States",
+            "entityId": 17113,
+            "entityName": "PACE LINDEN",
+            "state": "NJ",
+            "street": "2025 East Linden Avenue",
+            "subLocationName": null,
+            "zipPostalCode": "07036"
+        },
+        "locationDate": 1419310800000,
+        "memos": [
+            {
+                "attachments": [],
+                "comment": "????????????????????????????????????????????????\r\n6/3/93 Location     : CIRKER              \r\nPhysical date       : 06/16/93\r\nPhysical location   : CIRKER              \r\nPhysical tag number : 2,166\r\n????????????????????????????????????????????????\r\n\r\n????????????????????????????????????????????????\r\n6/6/92 Location     : CACCAMO             \r\nPhysical date       : 07/01/92\r\nPhysical location   : CACCAMO             \r\nPhysical tag number : 2,963\r\n????????????????????????????????????????????????\r\n\r\nstorage                                  09/01/86\r\nCACCAMO\r\n\r\n????????????????????????????????????????????????\r\n5/31/91 Location    : CACCAMO             \r\nPhysical date       : 07/21/91\r\nPhysical location   : CACCAMO             \r\nPhysical tag number : 9,209\r\n????????????????????????????????????????????????\r\n\r\n",
+                "type": "MISC_HIST_INFORMATION"
+            },
+            {
+                "attachments": [],
+                "comment": "Reinspected 12/15/14 (LA): abrasions outside frame, top left edge and whitish casts of paint LLC of center object and upper left side of bottom object.\r\n\r\nReinspected 4/16/14 (EK): fair- abraded in areas as noted. No change.\r\n\r\nReinspected 4/1/14 (LT): N/C: overall good condition. Slight dust accumulation.  Notes added for clarification. Inspected in crate.\r\n\r\nRe-inspected by Sam at Linden 7/10/13: N/C\r\n\r\nIncoming condition report completed by Simone Manwarring at L&M Arts 03/19/13: overall stable condition; dusty; scattered losses, abrasions and white residue on edges throughout. \r\nOutgoing condition report completed by Simone Manwarring at L&M Arts 05/16/13: N/C\r\n\r\nReinspected 2/27/13 (BN): inspected in crate - N/C; white accretions and handling marks noted throughout\r\n\r\n3/14/12 Reinspected at Warehouse upon return from Timothy Yarger Gallery (JH): The work was not packed properly in travel frame; two of the oz clips were not attached to the piece; the work slid forward in the travel frame resulting in several burnish marks on the face (see images attached to condition report); there are also hanlding marks throughout the perimeter of the work.\r\n\r\n02/24/11 (NR): Reinspected from crate at Linden: no apparent changes.\r\n\r\n9/29/2010 Reinspected (HL): overall good condition.\r\n\r\n*The work was successfully conserved by Steve Tatti (sv 3/29/10)\r\n\r\n10/08  Work was re-painted at Layman & Sons by Steve Tatti (MRH)\r\n\r\n03/06/08 Inspected at SAT with Insurance Adjuster, Robert O'Connell (with John Griswold), Steven Tatti and Michele Heinrici: \r\n\r\nOut-bound condition report:work inspected by PW staff, work is in very good condition overall. There are a few small surface rubs on the lower left. There is a minor loss on the lower right. The wood has an irregular surface at the bottom. Full condition report on file in reg office.\r\n\r\nAssessment: The crate appears to have been damaged in transit and during handling. There is dust and debris at the bottom of the crate. The crate was delivered face down. There is a loss on the front of the artwork which directly corresponds to the puncture on the face of the crate.\r\n\r\nTreatment: The loss and damaged area will be feathered in. The damaged areas will be give a coat of primer paint. The entire surface will be cleaned and prepped for painting. The piece will be given two coats of Nevelson approved paint. \r\n\r\nEstimate: $3,000.00\r\n\r\nFull treatment report can be accessible via the following file path: \\\\Pw-fp3\\home\\_Registrar\\Condition Reports\\Nevelson\\NEVELSON_01653\r\n\r\nDamaged in retrun shipment from Buschlen-Mowatt:    The crate appears to have been damaged in transit and during handling.  There is dust and debris at the bottom of the crate.   The crate was delivered traveling face down. There is a loss on the front of the artwork.  Inspected 2/8/08 (MRH)",
+                "type": "COND_CONSERVATION"
+            }
+        ],
+        "movementHistory": [
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "actualArrivalDate": 1419310800000,
+                "actualShipDate": null,
+                "destination": "PACE LINDEN",
+                "id": 233339,
+                "origin": "PACE GALLERY MENLO PARK",
+                "pending": false,
+                "shipOrderId": 69190,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "actualArrivalDate": 1397448000000,
+                "actualShipDate": 1397448000000,
+                "destination": "PACE GALLERY MENLO PARK",
+                "id": 220067,
+                "origin": "ATTHOWE FINE ART",
+                "pending": false,
+                "shipOrderId": 43343,
+                "type": "SHIP"
+            },
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "actualArrivalDate": 1396497600000,
+                "actualShipDate": 1396497600000,
+                "destination": "ATTHOWE FINE ART",
+                "id": 220068,
+                "origin": "PACE 55TH ST",
+                "pending": false,
+                "shipOrderId": 9041,
+                "type": "SHIP"
+            },
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "actualArrivalDate": 1395892800000,
+                "actualShipDate": 1395806400000,
+                "destination": "PACE 55TH ST",
+                "id": 770,
+                "origin": "PACE LINDEN",
+                "pending": false,
+                "shipOrderId": 35379,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "actualArrivalDate": 1370318400000,
+                "actualShipDate": null,
+                "destination": "PACE LINDEN",
+                "id": 771,
+                "origin": "L&M ARTS",
+                "pending": false,
+                "shipOrderId": 18635,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "actualArrivalDate": 1362546000000,
+                "actualShipDate": 1362546000000,
+                "destination": "L&M ARTS",
+                "id": 772,
+                "origin": "PACE 55TH ST",
+                "pending": false,
+                "shipOrderId": 22954,
+                "type": "SHIP"
+            },
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "actualArrivalDate": 1362027600000,
+                "actualShipDate": 1361941200000,
+                "destination": "PACE 55TH ST",
+                "id": 773,
+                "origin": "PACE LINDEN",
+                "pending": false,
+                "shipOrderId": 80069,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "actualArrivalDate": 1337054400000,
+                "actualShipDate": 1337054400000,
+                "destination": "PACE LINDEN",
+                "id": 774,
+                "origin": "PACE 55TH ST",
+                "pending": false,
+                "shipOrderId": 46647,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "actualArrivalDate": 1331697600000,
+                "actualShipDate": null,
+                "destination": "PACE 55TH ST",
+                "id": 776,
+                "origin": "TIMOTHY YARGER FINE ART",
+                "pending": false,
+                "shipOrderId": 65803,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "actualArrivalDate": null,
+                "actualShipDate": 1303358400000,
+                "destination": "TIMOTHY YARGER FINE ART",
+                "id": 777,
+                "origin": "PACE LINDEN",
+                "pending": false,
+                "shipOrderId": 48603,
+                "type": "SHIP"
+            },
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "actualArrivalDate": 1286164800000,
+                "actualShipDate": 1286164800000,
+                "destination": "PACE LINDEN",
+                "id": 778,
+                "origin": "PACE 55TH ST",
+                "pending": false,
+                "shipOrderId": 85053,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "actualArrivalDate": 1285646400000,
+                "actualShipDate": null,
+                "destination": "PACE 55TH ST",
+                "id": 779,
+                "origin": "ROSENBAUM CONTEMPORARY",
+                "pending": false,
+                "shipOrderId": 73718,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "actualArrivalDate": null,
+                "actualShipDate": 1270094400000,
+                "destination": "ROSENBAUM CONTEMPORARY",
+                "id": 780,
+                "origin": "PACE 55TH ST",
+                "pending": false,
+                "shipOrderId": 4870,
+                "type": "SHIP"
+            },
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "actualArrivalDate": 1229490000000,
+                "actualShipDate": null,
+                "destination": "PACE 55TH ST",
+                "id": 781,
+                "origin": "ART BASEL/MIAMI BEACH 2008",
+                "pending": false,
+                "shipOrderId": 50747,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "actualArrivalDate": null,
+                "actualShipDate": 1226638800000,
+                "destination": "ART BASEL/MIAMI BEACH 2008",
+                "id": 782,
+                "origin": "MARIANO BROTHERS",
+                "pending": false,
+                "shipOrderId": 9955,
+                "type": "SHIP"
+            },
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "actualArrivalDate": null,
+                "actualShipDate": 1222142400000,
+                "destination": "MARIANO BROTHERS",
+                "id": 783,
+                "origin": "SAT",
+                "pending": false,
+                "shipOrderId": 56100,
+                "type": "SHIP"
+            },
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "actualArrivalDate": null,
+                "actualShipDate": 1202360400000,
+                "destination": "SAT",
+                "id": 784,
+                "origin": "Buschlen-Mowatt",
+                "pending": false,
+                "shipOrderId": 17734,
+                "type": "SHIP"
+            },
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "actualArrivalDate": null,
+                "actualShipDate": 1172206800000,
+                "destination": "Buschlen-Mowatt",
+                "id": 785,
+                "origin": "PW CIRKER",
+                "pending": false,
+                "shipOrderId": 58259,
+                "type": "SHIP"
+            },
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "actualArrivalDate": 1170392400000,
+                "actualShipDate": 1170392400000,
+                "destination": "PW CIRKER",
+                "id": 786,
+                "origin": "PACE LIC",
+                "pending": false,
+                "shipOrderId": 28948,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "actualArrivalDate": 1152590400000,
+                "actualShipDate": 1152244800000,
+                "destination": "PACE LIC",
+                "id": 787,
+                "origin": "PW CIRKER",
+                "pending": false,
+                "shipOrderId": 7025,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "actualArrivalDate": 1149134400000,
+                "actualShipDate": 1149134400000,
+                "destination": "PW CIRKER",
+                "id": 788,
+                "origin": "PACE LIC",
+                "pending": false,
+                "shipOrderId": 1953,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "actualArrivalDate": 1026964800000,
+                "actualShipDate": 1026964800000,
+                "destination": "PACE LIC",
+                "id": 789,
+                "origin": "PW CIRKER",
+                "pending": false,
+                "shipOrderId": 53247,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "actualArrivalDate": 1026878400000,
+                "actualShipDate": 1026878400000,
+                "destination": "PW CIRKER",
+                "id": 790,
+                "origin": "PACE 57TH ST",
+                "pending": false,
+                "shipOrderId": 64013,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "actualArrivalDate": 1022126400000,
+                "actualShipDate": 1022126400000,
+                "destination": "PACE 57TH ST",
+                "id": 791,
+                "origin": "PACE LIC",
+                "pending": false,
+                "shipOrderId": 45562,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "actualArrivalDate": 982126804000,
+                "actualShipDate": 982126804000,
+                "destination": "PACE LIC",
+                "id": 792,
+                "origin": "PW CIRKER",
+                "pending": false,
+                "shipOrderId": 108365,
+                "type": "RECEIVE"
+            },
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "actualArrivalDate": 834033601000,
+                "actualShipDate": 833601601000,
+                "destination": "PW CIRKER",
+                "id": 794,
+                "origin": "PW CIRKER",
+                "pending": false,
+                "shipOrderId": 85045,
+                "type": "XXX"
+            },
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "actualArrivalDate": 805953602000,
+                "actualShipDate": 805953602000,
+                "destination": "PW CIRKER",
+                "id": 795,
+                "origin": "NOT PROVIDED",
+                "pending": false,
+                "shipOrderId": null,
+                "type": "ORIGIN"
+            },
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "actualArrivalDate": 805953600000,
+                "actualShipDate": 804139200000,
+                "destination": "PW CIRKER",
+                "id": 796,
+                "origin": "PW CIRKER",
+                "pending": false,
+                "shipOrderId": 64309,
+                "type": "XXX"
+            }
+        ],
+        "pgNumberNext": "01654.01",
+        "pgNumberPrevious": "01652",
+        "photos": [
+            {
+                "comment": "",
+                "date": 1149566400000,
+                "exhibition": null,
+                "format": "digital",
+                "id": 3792,
+                "photographer": {
+                    "id": 25389,
+                    "name": "Aram Jibilian",
+                    "type": null
+                },
+                "photographerAddress": {
+                    "active": false,
+                    "city": null,
+                    "country": null,
+                    "id": null,
+                    "state": null,
+                    "street": null,
+                    "text": null,
+                    "zipPostalCode": null
+                },
+                "photographerContact": {
+                    "active": false,
+                    "comment": null,
+                    "company": null,
+                    "division": null,
+                    "emailAddresses": null,
+                    "firstName": null,
+                    "fullName": null,
+                    "id": null,
+                    "jobDescription": null,
+                    "lastName": null,
+                    "middleName": null,
+                    "title": null
+                },
+                "scanned": "",
+                "source": "",
+                "storedLocation": "POD",
+                "viewNumber": ""
+            }
+        ],
+        "price": {
+            "currency": "USD",
+            "effectiveDate": 1426109335691,
+            "paceContact": "JB",
+            "price": 250000.0
+        },
+        "priceHistory": [
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "comment": "",
+                "currency": "USD",
+                "effectiveDate": 1426109335691,
+                "id": 66058,
+                "paceContact": {
+                    "id": 17,
+                    "value": "JB"
+                },
+                "price": 250000.0
+            },
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "comment": "",
+                "currency": "USD",
+                "effectiveDate": 1397237845127,
+                "id": 61874,
+                "paceContact": {
+                    "id": 17,
+                    "value": "JB"
+                },
+                "price": 150000.0
+            },
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "comment": "",
+                "currency": "USD",
+                "effectiveDate": 1241720022633,
+                "id": 358,
+                "paceContact": {
+                    "id": 17,
+                    "value": "JB"
+                },
+                "price": 125000.0
+            },
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "comment": "",
+                "currency": "USD",
+                "effectiveDate": 1207166656000,
+                "id": 357,
+                "paceContact": {
+                    "id": 17,
+                    "value": "JB"
+                },
+                "price": 175000.0
+            },
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "comment": "",
+                "currency": "USD",
+                "effectiveDate": 1202244845000,
+                "id": 356,
+                "paceContact": {
+                    "id": 17,
+                    "value": "JB"
+                },
+                "price": 150000.0
+            },
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "comment": "",
+                "currency": "USD",
+                "effectiveDate": 1158695329000,
+                "id": 355,
+                "paceContact": {
+                    "id": 41,
+                    "value": "ABG"
+                },
+                "price": 125000.0
+            },
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "comment": "",
+                "currency": "USD",
+                "effectiveDate": 1149968653000,
+                "id": 354,
+                "paceContact": {
+                    "id": 41,
+                    "value": "ABG"
+                },
+                "price": 100000.0
+            },
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "comment": "",
+                "currency": "USD",
+                "effectiveDate": 1106843682000,
+                "id": 353,
+                "paceContact": {
+                    "id": 69,
+                    "value": "REG"
+                },
+                "price": 33996.0
+            },
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "comment": "",
+                "currency": "USD",
+                "effectiveDate": 1043443691000,
+                "id": 352,
+                "paceContact": {
+                    "id": 78,
+                    "value": "SD"
+                },
+                "price": 100000.0
+            },
+            {
+                "acquisitionId": 309,
+                "acquisitionOrderNumber": 1,
+                "comment": "effective 01/24/95",
+                "currency": "USD",
+                "effectiveDate": 790923600000,
+                "id": 351,
+                "paceContact": {
+                    "id": 57,
+                    "value": "NONE"
+                },
+                "price": 85000.0
+            }
+        ],
+        "provenanceComment": null,
+        "tags": [
+            {
+                "id": 72,
+                "value": "wall relief"
+            }
+        ],
+        "ukImportStatus": null,
+        "ukImportStatusEndDate": null,
+        "ukImportStatusHistory": [],
+        "ukImportStatusStartDate": null
+    },
+    "version": "1687"
+}
