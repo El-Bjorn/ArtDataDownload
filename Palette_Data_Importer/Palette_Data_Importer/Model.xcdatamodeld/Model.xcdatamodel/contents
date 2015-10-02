@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8175.2" systemVersion="14F27" minimumToolsVersion="Xcode 4.3">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="14F27" minimumToolsVersion="Xcode 4.3">
     <entity name="Artwork" representedClassName="Artwork" syncable="YES">
         <attribute name="artistNames" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="artworkEditionInfo" optional="YES" attributeType="String" syncable="YES"/>
@@ -9,6 +9,8 @@
         <attribute name="classificationName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="creationDate" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="dimensions" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="highResImagePaths" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="highResImageTimestamp" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="imagesTimestamp" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="locationDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="locationName" optional="YES" attributeType="String" syncable="YES"/>
@@ -33,7 +35,7 @@
         <attribute name="artworkImage" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Artwork" positionX="-4430" positionY="-990" width="128" height="450"/>
+        <element name="Artwork" positionX="-4430" positionY="-990" width="128" height="478"/>
         <element name="ImageData" positionX="-4626" positionY="-801" width="128" height="60"/>
     </elements>
 </model>
