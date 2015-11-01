@@ -1,4 +1,4 @@
 #!/bin/bash
 
-/usr/bin/curl -v -c cookieJar http://palette-dev.pacegallery.com/palette/j_spring_security_check
+/usr/bin/curl --cookie cookieJar http://palette-dev.pacegallery.com/palette/masterdata | python -m json.tool
 

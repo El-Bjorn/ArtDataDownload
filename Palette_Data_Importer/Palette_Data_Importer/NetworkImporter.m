@@ -147,6 +147,7 @@ int num_artworks = 0;
     
     
     Artwork *newArt = [NSEntityDescription insertNewObjectForEntityForName:@"Artwork" inManagedObjectContext:ds.context];
+    newArt.currentAquisitionID = dict[@"acquisitionId"];
     newArt.artworkID = dict[@"artworkId"];
     newArt.paceID = dict[@"artworkPgNumber"];
     newArt.artistNames = dict[@"artistName"];

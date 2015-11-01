@@ -8,6 +8,7 @@
         <attribute name="artworkImageWidth" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="classificationName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="creationDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="currentAquisitionID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="dimensions" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="highResImagePaths" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="highResImageTimestamp" optional="YES" attributeType="Date" syncable="YES"/>
@@ -35,7 +36,7 @@
         <attribute name="artworkImage" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Artwork" positionX="-4430" positionY="-990" width="128" height="478"/>
+        <element name="Artwork" positionX="-4430" positionY="-990" width="128" height="493"/>
         <element name="ImageData" positionX="-4626" positionY="-801" width="128" height="60"/>
     </elements>
 </model>

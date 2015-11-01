@@ -2,11 +2,11 @@
 //  Artwork+CoreDataProperties.h
 //  Palette_Data_Importer
 //
-//  Created by BjornC on 9/20/15.
+//  Created by BjornC on 10/2/15.
 //  Copyright © 2015 Builtlight. All rights reserved.
 //
-//  Delete this file and regenerate it using "Create NSManagedObject Subclass…"
-//  to keep your implementation up to date with your model.
+//  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
+//  to delete and recreate this implementation file for your updated model.
 //
 
 #import "Artwork.h"
@@ -23,6 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *classificationName;
 @property (nullable, nonatomic, retain) NSString *creationDate;
 @property (nullable, nonatomic, retain) NSString *dimensions;
+@property (nullable, nonatomic, retain) NSString *highResImagePaths;
+@property (nullable, nonatomic, retain) NSDate *highResImageTimestamp;
 @property (nullable, nonatomic, retain) NSDate *imagesTimestamp;
 @property (nullable, nonatomic, retain) NSDate *locationDate;
 @property (nullable, nonatomic, retain) NSString *locationName;
@@ -38,6 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *statusColorName;
 @property (nullable, nonatomic, retain) NSString *statusLabel;
 @property (nullable, nonatomic, retain) NSString *title;
+@property (nullable, nonatomic, retain) NSNumber *currentAquisitionID;
 @property (nullable, nonatomic, retain) NSManagedObject *fourColumnImage;
 @property (nullable, nonatomic, retain) NSManagedObject *oneColumnImage;
 @property (nullable, nonatomic, retain) NSManagedObject *threeColumnImage;
