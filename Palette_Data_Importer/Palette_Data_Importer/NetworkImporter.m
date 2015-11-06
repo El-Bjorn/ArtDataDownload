@@ -167,7 +167,7 @@ int num_artworks = 0;
         //newArt.statusLabel = @"";
         for (NSDictionary *f in flagArray) {
             if ([dict[ f[@"flag"]] boolValue]==YES) {
-                [statusLabel stringByAppendingString:[NSString stringWithFormat:@"%@ ",f[@"label"]]];
+                statusLabel = [statusLabel stringByAppendingString:[NSString stringWithFormat:@"%@ ",f[@"label"]]];
                 newArt.statusColorName = @"orange";
             }
         }
@@ -211,8 +211,13 @@ int num_artworks = 0;
         newArt.priceCurrency = nil;
     } else {
         NSArray *priceParts = [priceStr componentsSeparatedByString:@","];
-        newArt.price = [NSDecimalNumber decimalNumberWithString:priceParts[0]];
-        newArt.priceCurrency = priceParts[1];
+        if (priceParts.count < 2) {
+            newArt.price = nil;
+            newArt.priceCurrency = nil;
+        } else {
+            newArt.price = [NSDecimalNumber decimalNumberWithString:priceParts[0]];
+            newArt.priceCurrency = priceParts[1];
+        }
     }
     
     if (dict[@"acquisitionPriceDealer"]==[NSNull null]) {
